@@ -1,0 +1,133 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_STAR_FOOD_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/StarFood"
+}
+
+model Restaurants {
+  Id            Int             @id @default(autoincrement())
+  Name          String
+  RestaurantId  Int             @unique
+  Active        Boolean         @default(true)
+  Products      Products[]
+  Categories    Categories[]
+  Variations    Variations[]
+  Order         Order[]
+  Table         Table[]
+  ProductImages ProductImages[]
+}
+
+model Products {
+  Id            Int             @id @default(autoincrement())
+  Name          String
+  Description   String
+  CreatedTime   DateTime        @default(now())
+  UpdateTime    DateTime        @updatedAt
+  RestaurantId  Int
+  Restaurant    Restaurants     @relation(fields: [RestaurantId], references: [Id])
+  CategoryId    Int
+  Categories    Categories      @relation(fields: [CategoryId], references: [Id])
+  Status        Boolean         @default(false)
+  Active        Boolean         @default(true)
+  Variations    Variations[]
+  ProductImages ProductImages[]
+}
+
+model Variations {
+  Id           Int            @id @default(autoincrement())
+  Name         String
+  Value        String
+  CreatedTime  DateTime       @default(now())
+  UpdateTime   DateTime       @updatedAt
+  ProductId    Int
+  Products     Products       @relation(fields: [ProductId], references: [Id])
+  RestaurantId Int
+  Restaurant   Restaurants    @relation(fields: [RestaurantId], references: [Id])
+  Active       Boolean        @default(true)
+  OrderProduct ProductOrder[]
+}
+
+model Categories {
+  Id           Int         @id @default(autoincrement())
+  Name         String
+  CreatedTime  DateTime    @default(now())
+  UpdateTime   DateTime    @updatedAt
+  RestaurantId Int
+  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
+  Status       Boolean     @default(false)
+  Active       Boolean     @default(true)
+  Products     Products[]
+}
+
+model Order {
+  Id            Int            @id @default(autoincrement())
+  Status        Status         @default(WAITING)
+  CreatedTime   DateTime       @default(now())
+  UpdateTime    DateTime       @updatedAt
+  Paid          Boolean        @default(false)
+  Active        Boolean        @default(true)
+  OrderProducts ProductOrder[]
+  UserId        Int
+  TableId       Int
+  Table         Table          @relation(fields: [TableId], references: [Id])
+  RestaurantId  Int
+  Restaurant    Restaurants    @relation(fields: [RestaurantId], references: [Id])
+  Payments      Payments[]
+}
+
+model ProductOrder {
+  Id          Int        @id @default(autoincrement())
+  Quantity    Int
+  OrderId     Int
+  CreatedTime DateTime   @default(now())
+  UpdateTime  DateTime   @updatedAt
+  Order       Order      @relation(fields: [OrderId], references: [Id])
+  VariationId Int
+  Variation   Variations @relation(fields: [VariationId], references: [Id])
+}
+
+model ProductImages {
+  Id           Int         @id @default(autoincrement())
+  ProductId    Int
+  Products     Products    @relation(fields: [ProductId], references: [Id])
+  ImagePath    String
+  RestaurantId Int
+  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
+  CreatedTime  DateTime    @default(now())
+  UpdateTime   DateTime    @updatedAt
+  Active       Boolean     @default(true)
+}
+
+model Table {
+  Id           Int         @id @default(autoincrement())
+  Status       Boolean     @default(false)
+  Number       Int
+  CreatedTime  DateTime    @default(now())
+  UpdateTime   DateTime    @updatedAt
+  Active       Boolean     @default(true)
+  Order        Order[]
+  RestaurantId Int
+  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
+}
+
+model Payments {
+  Id          Int      @id @default(autoincrement())
+  OrderId     Int
+  Order       Order    @relation(fields: [OrderId], references: [Id])
+  Amount      Int
+  PaymentType String
+  CreatedTime DateTime @default(now())
+  UpdateTime  DateTime @updatedAt
+}
+
+enum Status {
+  WAITING
+  IN_PRODUCTION
+  DONE
+  COMPLETED
+  PAID_OUT
+}

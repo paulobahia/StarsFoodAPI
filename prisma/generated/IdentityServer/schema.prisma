@@ -1,0 +1,22 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_IDENTITY_SERVER_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/IdentityServer"
+}
+
+model User {
+  Id           Int      @id @default(autoincrement())
+  Name         String
+  Email        String   @unique
+  Password     String
+  BirthDate    DateTime
+  Gender       String
+  RestaurantId Int
+  Role         String
+  CreatedTime  DateTime @default(now())
+  UpdateTime   DateTime @updatedAt
+}
