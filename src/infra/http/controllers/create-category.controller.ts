@@ -1,20 +1,19 @@
 import { JwtAuthGuard } from "@/infra/auth/jwt.guard";
 import { RestaurantId } from "@/infra/auth/request-context-decorator";
-import { BadRequestException, Body, ConflictException, Controller, HttpCode, NotFoundException, Post, UseGuards, UsePipes } from "@nestjs/common";
+import { BadRequestException, Body, Controller, HttpCode, NotFoundException, Post, UseGuards } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { z } from 'zod'
 import { ZodValidationPipe } from "../pipes/zod-validation-pipe";
 import { RestaurantIdValidationPipe } from "@/core/types/restaurantId";
 import { RegisterCategoryUseCase } from "@/domain/application/use-cases/register-category";
 import { ResourceNotFoundError } from "@/core/errors/errors/resource-not-found-error";
+import { CreateCategoryDto } from "@/domain/enterprise/dtos/create-category-dto";
 
 const createCategoryBodySchema = z.object({
-    name: z.string(),
+    name: z.string()
 })
 
 export const CategoryValidationPipe = new ZodValidationPipe(createCategoryBodySchema)
-
-type CreateCategoryBodySchema = z.infer<typeof createCategoryBodySchema>
 
 @ApiTags('Categories')
 @Controller('api/categories')
@@ -25,7 +24,7 @@ export class CreateCategoryController {
 
     @Post()
     @HttpCode(201)
-    async handle(@Body(CategoryValidationPipe) body: CreateCategoryBodySchema, @RestaurantId(RestaurantIdValidationPipe) restaurantId: number) {
+    async handle(@Body(CategoryValidationPipe) body: CreateCategoryDto, @RestaurantId(RestaurantIdValidationPipe) restaurantId: number) {
         const { name } = body
 
         const result = await this.registerCategory.execute({

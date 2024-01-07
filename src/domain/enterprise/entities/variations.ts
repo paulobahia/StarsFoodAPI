@@ -1,18 +1,18 @@
+import { AggregateRoot } from "@/core/entities/aggregate-root"
 import { UniqueEntityID } from "@/core/entities/unique-entity-id"
-import { AggregateRoot } from "src/core/entities/aggregate-root"
-import { Optional } from '@/core/types/optional'
-import { ApiProperty } from "@nestjs/swagger";
+import { Optional } from "@/core/types/optional"
 
-export interface CategoryProps {
+export interface VariationProps {
     name: string
-    restaurantId: UniqueEntityID
+    value: string
     createdTime: Date
     updateTime: Date
-    status: boolean
+    productId: UniqueEntityID
+    restaurantId: UniqueEntityID
     active: boolean
 }
 
-export class Category extends AggregateRoot<CategoryProps> {
+export class Variation extends AggregateRoot<VariationProps> {
 
     get name() {
         return this.props.name
@@ -21,6 +21,19 @@ export class Category extends AggregateRoot<CategoryProps> {
     set name(name: string) {
         this.props.name = name
         this.touch()
+    }
+
+    get value() {
+        return this.props.value
+    }
+
+    set value(value: string) {
+        this.props.value = value
+        this.touch()
+    }
+
+    get productId() {
+        return this.props.productId
     }
 
     get restaurantId() {
@@ -35,15 +48,6 @@ export class Category extends AggregateRoot<CategoryProps> {
         return this.props.updateTime
     }
 
-    get status() {
-        return this.props.status
-    }
-
-    set status(status: boolean) {
-        this.props.status = status
-        this.touch()
-    }
-
     get active() {
         return this.props.active
     }
@@ -53,17 +57,16 @@ export class Category extends AggregateRoot<CategoryProps> {
     }
 
     static create(
-        props: Optional<CategoryProps, 'active' | 'status' | 'createdTime' | 'updateTime'>,
+        props: Optional<VariationProps, 'active' | 'createdTime' | 'updateTime'>,
         id?: UniqueEntityID,
     ) {
-        const category = new Category(
+        const variation = new Variation(
             {
                 ...props,
                 createdTime: props.createdTime ?? new Date(),
                 updateTime: props.updateTime ?? new Date(),
-                status: props.status ?? false,
                 active: props.active ?? true
             }, id!)
-        return category
+        return variation
     }
 }

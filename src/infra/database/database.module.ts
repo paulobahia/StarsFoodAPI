@@ -7,6 +7,8 @@ import { RestaurantsRepository } from "@/domain/application/repositores/restaura
 import { PrismaRestaurantsRepository } from "./prisma/repositories/primsa-restaurants-repository";
 import { ProductsRepository } from "@/domain/application/repositores/products-repository";
 import { PrismaProductsRepository } from "./prisma/repositories/primsa-products-repository";
+import { VariationsRepository } from "@/domain/application/repositores/variations-repository";
+import { PrismaVariationsRepository } from "./prisma/repositories/prisma-variations-repository";
 
 @Global()
 @Module({
@@ -24,6 +26,10 @@ import { PrismaProductsRepository } from "./prisma/repositories/primsa-products-
         {
             provide: ProductsRepository,
             useClass: PrismaProductsRepository
+        },
+        {
+            provide: VariationsRepository,
+            useClass: PrismaVariationsRepository
         }
     ],
     exports: [
@@ -31,7 +37,8 @@ import { PrismaProductsRepository } from "./prisma/repositories/primsa-products-
         IdentityServerPrismaService,
         CategoriesRepository,
         RestaurantsRepository,
-        ProductsRepository
+        ProductsRepository,
+        VariationsRepository
     ]
 })
 export class DatabaseModule { }

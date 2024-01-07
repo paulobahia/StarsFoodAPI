@@ -14,11 +14,27 @@ import { DeleteCategoryController } from './controllers/delete-category.controll
 import { DeleteCategoryUseCase } from '@/domain/application/use-cases/delete-category';
 import { GetProductsController } from './controllers/get-products.controller';
 import { GetProductsUseCase } from '@/domain/application/use-cases/get-products';
+import { CreateProductController } from './controllers/create-product.controller';
+import { RegisterProductUseCase } from '@/domain/application/use-cases/register-product';
+import { EditProductController } from './controllers/edit-product.controller';
+import { EditProductUseCase } from '@/domain/application/use-cases/edit-product';
+import { EditVariationUseCase } from '@/domain/application/use-cases/edit-variation';
+import { FetchProductsController } from './controllers/fetch-product.controller';
+import { FetchProductsUseCase } from '@/domain/application/use-cases/fetch-product';
+import { EditStatusProductController } from './controllers/edit-status-product.controller';
+import { EditStatusProductUseCase } from '@/domain/application/use-cases/edit-status-product';
+import { DeleteProductController } from './controllers/delete-product.controller';
+import { DeleteProductUseCase } from '@/domain/application/use-cases/delete-product';
 
 @Module({
     imports: [DatabaseModule],
     controllers: [
         GetProductsController,
+        CreateProductController,
+        EditProductController,
+        FetchProductsController,
+        EditStatusProductController,
+        DeleteProductController,
         GetCategoriesController,
         CreateCategoryController,
         EditCategoryController,
@@ -32,8 +48,14 @@ import { GetProductsUseCase } from '@/domain/application/use-cases/get-products'
         EditCategoryUseCase,
         FetchCategoriesUseCase,
         EditStatusCategoryUseCase,
+        DeleteProductUseCase,
         DeleteCategoryUseCase,
-        GetProductsUseCase
+        GetProductsUseCase,
+        RegisterProductUseCase,
+        EditProductUseCase,
+        FetchProductsUseCase,
+        EditStatusProductUseCase,
+        EditVariationUseCase
     ]
 })
 export class HttpModule { }

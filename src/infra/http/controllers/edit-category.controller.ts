@@ -37,7 +37,7 @@ export class EditCategoryController {
 
         if (result.isLeft()) {
             const error = result.value
-
+            
             switch (error.constructor) {
                 case ResourceNotFoundError:
                     throw new NotFoundException(error.message)
