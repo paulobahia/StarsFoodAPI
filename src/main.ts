@@ -15,8 +15,11 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('endpoints')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('/swagger', app, document);
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: { defaultModelsExpandDepth: -1 },
+  });
 
   await app.listen(5002);
 }
