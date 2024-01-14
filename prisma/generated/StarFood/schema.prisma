@@ -1,3 +1,4 @@
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_STAR_FOOD_URL")
@@ -13,28 +14,32 @@ model Restaurants {
   Name          String
   RestaurantId  Int             @unique
   Active        Boolean         @default(true)
-  Products      Products[]
   Categories    Categories[]
-  Variations    Variations[]
   Order         Order[]
-  Table         Table[]
   ProductImages ProductImages[]
+  Products      Products[]
+  Table         Table[]
+  Variations    Variations[]
 }
 
 model Products {
   Id            Int             @id @default(autoincrement())
   Name          String
   Description   String
+  ImgUrl        Json
   CreatedTime   DateTime        @default(now())
   UpdateTime    DateTime        @updatedAt
   RestaurantId  Int
-  Restaurant    Restaurants     @relation(fields: [RestaurantId], references: [Id])
   CategoryId    Int
-  Categories    Categories      @relation(fields: [CategoryId], references: [Id])
   Status        Boolean         @default(false)
   Active        Boolean         @default(true)
-  Variations    Variations[]
   ProductImages ProductImages[]
+  Categories    Categories      @relation(fields: [CategoryId], references: [Id])
+  Restaurant    Restaurants     @relation(fields: [RestaurantId], references: [Id])
+  Variations    Variations[]
+
+  @@index([CategoryId], map: "Products_CategoryId_fkey")
+  @@index([RestaurantId], map: "Products_RestaurantId_fkey")
 }
 
 model Variations {
@@ -44,11 +49,14 @@ model Variations {
   CreatedTime  DateTime       @default(now())
   UpdateTime   DateTime       @updatedAt
   ProductId    Int
-  Products     Products       @relation(fields: [ProductId], references: [Id])
   RestaurantId Int
-  Restaurant   Restaurants    @relation(fields: [RestaurantId], references: [Id])
   Active       Boolean        @default(true)
   OrderProduct ProductOrder[]
+  Products     Products       @relation(fields: [ProductId], references: [Id])
+  Restaurant   Restaurants    @relation(fields: [RestaurantId], references: [Id])
+
+  @@index([ProductId], map: "Variations_ProductId_fkey")
+  @@index([RestaurantId], map: "Variations_RestaurantId_fkey")
 }
 
 model Categories {
@@ -57,10 +65,12 @@ model Categories {
   CreatedTime  DateTime    @default(now())
   UpdateTime   DateTime    @updatedAt
   RestaurantId Int
-  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
   Status       Boolean     @default(false)
   Active       Boolean     @default(true)
+  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
   Products     Products[]
+
+  @@index([RestaurantId], map: "Categories_RestaurantId_fkey")
 }
 
 model Order {
@@ -70,13 +80,16 @@ model Order {
   UpdateTime    DateTime       @updatedAt
   Paid          Boolean        @default(false)
   Active        Boolean        @default(true)
-  OrderProducts ProductOrder[]
   UserId        Int
   TableId       Int
-  Table         Table          @relation(fields: [TableId], references: [Id])
   RestaurantId  Int
   Restaurant    Restaurants    @relation(fields: [RestaurantId], references: [Id])
+  Table         Table          @relation(fields: [TableId], references: [Id])
   Payments      Payments[]
+  OrderProducts ProductOrder[]
+
+  @@index([RestaurantId], map: "Order_RestaurantId_fkey")
+  @@index([TableId], map: "Order_TableId_fkey")
 }
 
 model ProductOrder {
@@ -85,21 +98,29 @@ model ProductOrder {
   OrderId     Int
   CreatedTime DateTime   @default(now())
   UpdateTime  DateTime   @updatedAt
-  Order       Order      @relation(fields: [OrderId], references: [Id])
   VariationId Int
+  Order       Order      @relation(fields: [OrderId], references: [Id])
   Variation   Variations @relation(fields: [VariationId], references: [Id])
+
+  @@index([OrderId], map: "ProductOrder_OrderId_fkey")
+  @@index([VariationId], map: "ProductOrder_VariationId_fkey")
 }
 
 model ProductImages {
   Id           Int         @id @default(autoincrement())
-  ProductId    Int
-  Products     Products    @relation(fields: [ProductId], references: [Id])
+  Name         String
   ImagePath    String
+  Size         Int
   RestaurantId Int
-  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
   CreatedTime  DateTime    @default(now())
   UpdateTime   DateTime    @updatedAt
   Active       Boolean     @default(true)
+  ProductId    Int?
+  Products     Products?   @relation(fields: [ProductId], references: [Id])
+  Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
+
+  @@index([ProductId], map: "ProductImages_ProductId_fkey")
+  @@index([RestaurantId], map: "ProductImages_RestaurantId_fkey")
 }
 
 model Table {
@@ -109,19 +130,23 @@ model Table {
   CreatedTime  DateTime    @default(now())
   UpdateTime   DateTime    @updatedAt
   Active       Boolean     @default(true)
-  Order        Order[]
   RestaurantId Int
+  Order        Order[]
   Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
+
+  @@index([RestaurantId], map: "Table_RestaurantId_fkey")
 }
 
 model Payments {
   Id          Int      @id @default(autoincrement())
   OrderId     Int
-  Order       Order    @relation(fields: [OrderId], references: [Id])
   Amount      Int
   PaymentType String
   CreatedTime DateTime @default(now())
   UpdateTime  DateTime @updatedAt
+  Order       Order    @relation(fields: [OrderId], references: [Id])
+
+  @@index([OrderId], map: "Payments_OrderId_fkey")
 }
 
 enum Status {

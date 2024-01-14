@@ -118,6 +118,7 @@ exports.Prisma.ProductsScalarFieldEnum = {
   Id: 'Id',
   Name: 'Name',
   Description: 'Description',
+  ImgUrl: 'ImgUrl',
   CreatedTime: 'CreatedTime',
   UpdateTime: 'UpdateTime',
   RestaurantId: 'RestaurantId',
@@ -170,12 +171,14 @@ exports.Prisma.ProductOrderScalarFieldEnum = {
 
 exports.Prisma.ProductImagesScalarFieldEnum = {
   Id: 'Id',
-  ProductId: 'ProductId',
+  Name: 'Name',
   ImagePath: 'ImagePath',
+  Size: 'Size',
   RestaurantId: 'RestaurantId',
   CreatedTime: 'CreatedTime',
   UpdateTime: 'UpdateTime',
-  Active: 'Active'
+  Active: 'Active',
+  ProductId: 'ProductId'
 };
 
 exports.Prisma.TableScalarFieldEnum = {
@@ -200,6 +203,21 @@ exports.Prisma.PaymentsScalarFieldEnum = {
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
+};
+
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 exports.Status = exports.$Enums.Status = {
   WAITING: 'WAITING',
