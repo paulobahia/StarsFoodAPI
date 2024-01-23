@@ -1,8 +1,8 @@
 import { Module, Provider } from "@nestjs/common";
 import { CqrsModule } from "@nestjs/cqrs";
-import { StarFoodPrismaService } from "src/product/infrastructure/database/star-food.prisma.service";
+import { StarFoodPrismaService } from "src/shared/database/star-food.prisma.service";
 import { InjectionToken } from "./application/injection-token";
-import { RestaurantQueryImplement } from "./infrastructure/query/category-query.implement";
+import { RestaurantQueryImplement } from "./infrastructure/query/restaurant-query.implement";
 
 const infrastructure: Provider[] = [
     StarFoodPrismaService,

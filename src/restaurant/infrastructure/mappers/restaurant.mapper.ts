@@ -1,4 +1,4 @@
-import { Restaurants, Prisma } from "prisma/generated/StarFood";
+import { Prisma, Restaurants } from "prisma/generated/StarFood";
 import { RestaurantEntity } from "../entity/restaurant.entity";
 
 export class RestaurantMapper {

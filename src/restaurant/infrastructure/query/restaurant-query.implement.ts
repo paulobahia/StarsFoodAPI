@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { StarFoodPrismaService } from "src/product/infrastructure/database/star-food.prisma.service";
+import { StarFoodPrismaService } from "src/shared/database/star-food.prisma.service";
 import { FindRestaurantByIdResult } from "src/restaurant/application/query/find-restaurant-by-id.result";
 import { RestaurantQuery } from "src/restaurant/application/query/restaurant.query";
 import { RestaurantMapper } from "../mappers/restaurant.mapper";
