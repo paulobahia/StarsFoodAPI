@@ -1,4 +1,3 @@
-
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_STAR_FOOD_URL")
@@ -14,6 +13,9 @@ model Restaurants {
   Name          String
   RestaurantId  Int             @unique
   Active        Boolean         @default(true)
+  CreatedAt     DateTime        @default(now())
+  UpdatedAt     DateTime        @updatedAt
+  DeletedAt     DateTime?
   Categories    Categories[]
   Order         Order[]
   ProductImages ProductImages[]
@@ -27,8 +29,9 @@ model Products {
   Name          String
   Description   String
   ImgUrl        Json
-  CreatedTime   DateTime        @default(now())
-  UpdateTime    DateTime        @updatedAt
+  CreatedAt     DateTime        @default(now())
+  UpdatedAt     DateTime        @updatedAt
+  DeletedAt     DateTime?
   RestaurantId  Int
   CategoryId    Int
   Status        Boolean         @default(false)
@@ -46,8 +49,9 @@ model Variations {
   Id           Int            @id @default(autoincrement())
   Name         String
   Value        String
-  CreatedTime  DateTime       @default(now())
-  UpdateTime   DateTime       @updatedAt
+  CreatedAt    DateTime       @default(now())
+  UpdatedAt    DateTime       @updatedAt
+  DeletedAt    DateTime?
   ProductId    Int
   RestaurantId Int
   Active       Boolean        @default(true)
@@ -62,8 +66,9 @@ model Variations {
 model Categories {
   Id           Int         @id @default(autoincrement())
   Name         String
-  CreatedTime  DateTime    @default(now())
-  UpdateTime   DateTime    @updatedAt
+  CreatedAt    DateTime    @default(now())
+  UpdatedAt    DateTime    @updatedAt
+  DeletedAt    DateTime?
   RestaurantId Int
   Status       Boolean     @default(false)
   Active       Boolean     @default(true)
@@ -76,8 +81,9 @@ model Categories {
 model Order {
   Id            Int            @id @default(autoincrement())
   Status        Status         @default(WAITING)
-  CreatedTime   DateTime       @default(now())
-  UpdateTime    DateTime       @updatedAt
+  CreatedAt     DateTime       @default(now())
+  UpdatedAt     DateTime       @updatedAt
+  DeletedAt     DateTime?
   Paid          Boolean        @default(false)
   Active        Boolean        @default(true)
   UserId        Int
@@ -96,8 +102,8 @@ model ProductOrder {
   Id          Int        @id @default(autoincrement())
   Quantity    Int
   OrderId     Int
-  CreatedTime DateTime   @default(now())
-  UpdateTime  DateTime   @updatedAt
+  CreatedAt   DateTime   @default(now())
+  UpdatedAt   DateTime   @updatedAt
   VariationId Int
   Order       Order      @relation(fields: [OrderId], references: [Id])
   Variation   Variations @relation(fields: [VariationId], references: [Id])
@@ -112,14 +118,14 @@ model ProductImages {
   ImagePath    String
   Size         Int
   RestaurantId Int
-  CreatedTime  DateTime    @default(now())
-  UpdateTime   DateTime    @updatedAt
+  CreatedAt    DateTime    @default(now())
+  UpdatedAt    DateTime    @updatedAt
+  DeletedAt    DateTime?
   Active       Boolean     @default(true)
-  ProductId    Int?
-  Products     Products?   @relation(fields: [ProductId], references: [Id])
   Restaurant   Restaurants @relation(fields: [RestaurantId], references: [Id])
+  Products     Products?   @relation(fields: [productsId], references: [Id])
+  productsId   Int?
 
-  @@index([ProductId], map: "ProductImages_ProductId_fkey")
   @@index([RestaurantId], map: "ProductImages_RestaurantId_fkey")
 }
 
@@ -127,8 +133,10 @@ model Table {
   Id           Int         @id @default(autoincrement())
   Status       Boolean     @default(false)
   Number       Int
-  CreatedTime  DateTime    @default(now())
-  UpdateTime   DateTime    @updatedAt
+  Barcode      String
+  CreatedAt    DateTime    @default(now())
+  UpdatedAt    DateTime    @updatedAt
+  DeletedAt    DateTime?
   Active       Boolean     @default(true)
   RestaurantId Int
   Order        Order[]
@@ -142,8 +150,8 @@ model Payments {
   OrderId     Int
   Amount      Int
   PaymentType String
-  CreatedTime DateTime @default(now())
-  UpdateTime  DateTime @updatedAt
+  CreatedAt   DateTime @default(now())
+  UpdatedAt   DateTime @updatedAt
   Order       Order    @relation(fields: [OrderId], references: [Id])
 
   @@index([OrderId], map: "Payments_OrderId_fkey")

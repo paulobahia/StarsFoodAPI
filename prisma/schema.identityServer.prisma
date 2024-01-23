@@ -9,14 +9,17 @@ generator client {
 }
 
 model User {
-  Id           Int      @id @default(autoincrement())
+  Id           Int       @id @default(autoincrement())
   Name         String
-  Email        String   @unique
+  ImgPath      String
+  Email        String    @unique
   Password     String
   BirthDate    DateTime
   Gender       String
-  RestaurantId Int
   Role         String
-  CreatedTime  DateTime @default(now())
-  UpdateTime   DateTime @updatedAt
+  Active       Boolean   @default(true)
+  CreatedAt    DateTime  @default(now())
+  UpdatedAt    DateTime  @updatedAt
+  DeletedAt    DateTime?
+  RestaurantId Int
 }

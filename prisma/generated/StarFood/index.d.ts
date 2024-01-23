@@ -1832,6 +1832,9 @@ export namespace Prisma {
     Name: string | null
     RestaurantId: number | null
     Active: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
   }
 
   export type RestaurantsMaxAggregateOutputType = {
@@ -1839,6 +1842,9 @@ export namespace Prisma {
     Name: string | null
     RestaurantId: number | null
     Active: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
   }
 
   export type RestaurantsCountAggregateOutputType = {
@@ -1846,6 +1852,9 @@ export namespace Prisma {
     Name: number
     RestaurantId: number
     Active: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     _all: number
   }
 
@@ -1865,6 +1874,9 @@ export namespace Prisma {
     Name?: true
     RestaurantId?: true
     Active?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
   }
 
   export type RestaurantsMaxAggregateInputType = {
@@ -1872,6 +1884,9 @@ export namespace Prisma {
     Name?: true
     RestaurantId?: true
     Active?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
   }
 
   export type RestaurantsCountAggregateInputType = {
@@ -1879,6 +1894,9 @@ export namespace Prisma {
     Name?: true
     RestaurantId?: true
     Active?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     _all?: true
   }
 
@@ -1973,6 +1991,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active: boolean
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     _count: RestaurantsCountAggregateOutputType | null
     _avg: RestaurantsAvgAggregateOutputType | null
     _sum: RestaurantsSumAggregateOutputType | null
@@ -1999,6 +2020,9 @@ export namespace Prisma {
     Name?: boolean
     RestaurantId?: boolean
     Active?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Categories?: boolean | Restaurants$CategoriesArgs<ExtArgs>
     Order?: boolean | Restaurants$OrderArgs<ExtArgs>
     ProductImages?: boolean | Restaurants$ProductImagesArgs<ExtArgs>
@@ -2013,6 +2037,9 @@ export namespace Prisma {
     Name?: boolean
     RestaurantId?: boolean
     Active?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
   }
 
   export type RestaurantsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2041,6 +2068,9 @@ export namespace Prisma {
       Name: string
       RestaurantId: number
       Active: boolean
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
     }, ExtArgs["result"]["restaurants"]>
     composites: {}
   }
@@ -2450,6 +2480,9 @@ export namespace Prisma {
     readonly Name: FieldRef<"Restaurants", 'String'>
     readonly RestaurantId: FieldRef<"Restaurants", 'Int'>
     readonly Active: FieldRef<"Restaurants", 'Boolean'>
+    readonly CreatedAt: FieldRef<"Restaurants", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Restaurants", 'DateTime'>
+    readonly DeletedAt: FieldRef<"Restaurants", 'DateTime'>
   }
     
 
@@ -2931,8 +2964,9 @@ export namespace Prisma {
     Id: number | null
     Name: string | null
     Description: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     RestaurantId: number | null
     CategoryId: number | null
     Status: boolean | null
@@ -2943,8 +2977,9 @@ export namespace Prisma {
     Id: number | null
     Name: string | null
     Description: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     RestaurantId: number | null
     CategoryId: number | null
     Status: boolean | null
@@ -2956,8 +2991,9 @@ export namespace Prisma {
     Name: number
     Description: number
     ImgUrl: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     RestaurantId: number
     CategoryId: number
     Status: number
@@ -2982,8 +3018,9 @@ export namespace Prisma {
     Id?: true
     Name?: true
     Description?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     RestaurantId?: true
     CategoryId?: true
     Status?: true
@@ -2994,8 +3031,9 @@ export namespace Prisma {
     Id?: true
     Name?: true
     Description?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     RestaurantId?: true
     CategoryId?: true
     Status?: true
@@ -3007,8 +3045,9 @@ export namespace Prisma {
     Name?: true
     Description?: true
     ImgUrl?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     RestaurantId?: true
     CategoryId?: true
     Status?: true
@@ -3107,8 +3146,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonValue
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     RestaurantId: number
     CategoryId: number
     Status: boolean
@@ -3139,8 +3179,9 @@ export namespace Prisma {
     Name?: boolean
     Description?: boolean
     ImgUrl?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     RestaurantId?: boolean
     CategoryId?: boolean
     Status?: boolean
@@ -3157,8 +3198,9 @@ export namespace Prisma {
     Name?: boolean
     Description?: boolean
     ImgUrl?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     RestaurantId?: boolean
     CategoryId?: boolean
     Status?: boolean
@@ -3187,8 +3229,9 @@ export namespace Prisma {
       Name: string
       Description: string
       ImgUrl: Prisma.JsonValue
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
       RestaurantId: number
       CategoryId: number
       Status: boolean
@@ -3598,8 +3641,9 @@ export namespace Prisma {
     readonly Name: FieldRef<"Products", 'String'>
     readonly Description: FieldRef<"Products", 'String'>
     readonly ImgUrl: FieldRef<"Products", 'Json'>
-    readonly CreatedTime: FieldRef<"Products", 'DateTime'>
-    readonly UpdateTime: FieldRef<"Products", 'DateTime'>
+    readonly CreatedAt: FieldRef<"Products", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Products", 'DateTime'>
+    readonly DeletedAt: FieldRef<"Products", 'DateTime'>
     readonly RestaurantId: FieldRef<"Products", 'Int'>
     readonly CategoryId: FieldRef<"Products", 'Int'>
     readonly Status: FieldRef<"Products", 'Boolean'>
@@ -4001,8 +4045,9 @@ export namespace Prisma {
     Id: number | null
     Name: string | null
     Value: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     ProductId: number | null
     RestaurantId: number | null
     Active: boolean | null
@@ -4012,8 +4057,9 @@ export namespace Prisma {
     Id: number | null
     Name: string | null
     Value: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     ProductId: number | null
     RestaurantId: number | null
     Active: boolean | null
@@ -4023,8 +4069,9 @@ export namespace Prisma {
     Id: number
     Name: number
     Value: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     ProductId: number
     RestaurantId: number
     Active: number
@@ -4048,8 +4095,9 @@ export namespace Prisma {
     Id?: true
     Name?: true
     Value?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     ProductId?: true
     RestaurantId?: true
     Active?: true
@@ -4059,8 +4107,9 @@ export namespace Prisma {
     Id?: true
     Name?: true
     Value?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     ProductId?: true
     RestaurantId?: true
     Active?: true
@@ -4070,8 +4119,9 @@ export namespace Prisma {
     Id?: true
     Name?: true
     Value?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     ProductId?: true
     RestaurantId?: true
     Active?: true
@@ -4168,8 +4218,9 @@ export namespace Prisma {
     Id: number
     Name: string
     Value: string
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     ProductId: number
     RestaurantId: number
     Active: boolean
@@ -4198,8 +4249,9 @@ export namespace Prisma {
     Id?: boolean
     Name?: boolean
     Value?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     ProductId?: boolean
     RestaurantId?: boolean
     Active?: boolean
@@ -4213,8 +4265,9 @@ export namespace Prisma {
     Id?: boolean
     Name?: boolean
     Value?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     ProductId?: boolean
     RestaurantId?: boolean
     Active?: boolean
@@ -4239,8 +4292,9 @@ export namespace Prisma {
       Id: number
       Name: string
       Value: string
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
       ProductId: number
       RestaurantId: number
       Active: boolean
@@ -4646,8 +4700,9 @@ export namespace Prisma {
     readonly Id: FieldRef<"Variations", 'Int'>
     readonly Name: FieldRef<"Variations", 'String'>
     readonly Value: FieldRef<"Variations", 'String'>
-    readonly CreatedTime: FieldRef<"Variations", 'DateTime'>
-    readonly UpdateTime: FieldRef<"Variations", 'DateTime'>
+    readonly CreatedAt: FieldRef<"Variations", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Variations", 'DateTime'>
+    readonly DeletedAt: FieldRef<"Variations", 'DateTime'>
     readonly ProductId: FieldRef<"Variations", 'Int'>
     readonly RestaurantId: FieldRef<"Variations", 'Int'>
     readonly Active: FieldRef<"Variations", 'Boolean'>
@@ -5024,8 +5079,9 @@ export namespace Prisma {
   export type CategoriesMinAggregateOutputType = {
     Id: number | null
     Name: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     RestaurantId: number | null
     Status: boolean | null
     Active: boolean | null
@@ -5034,8 +5090,9 @@ export namespace Prisma {
   export type CategoriesMaxAggregateOutputType = {
     Id: number | null
     Name: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     RestaurantId: number | null
     Status: boolean | null
     Active: boolean | null
@@ -5044,8 +5101,9 @@ export namespace Prisma {
   export type CategoriesCountAggregateOutputType = {
     Id: number
     Name: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     RestaurantId: number
     Status: number
     Active: number
@@ -5066,8 +5124,9 @@ export namespace Prisma {
   export type CategoriesMinAggregateInputType = {
     Id?: true
     Name?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     RestaurantId?: true
     Status?: true
     Active?: true
@@ -5076,8 +5135,9 @@ export namespace Prisma {
   export type CategoriesMaxAggregateInputType = {
     Id?: true
     Name?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     RestaurantId?: true
     Status?: true
     Active?: true
@@ -5086,8 +5146,9 @@ export namespace Prisma {
   export type CategoriesCountAggregateInputType = {
     Id?: true
     Name?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     RestaurantId?: true
     Status?: true
     Active?: true
@@ -5183,8 +5244,9 @@ export namespace Prisma {
   export type CategoriesGroupByOutputType = {
     Id: number
     Name: string
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     RestaurantId: number
     Status: boolean
     Active: boolean
@@ -5212,8 +5274,9 @@ export namespace Prisma {
   export type CategoriesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     Id?: boolean
     Name?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     RestaurantId?: boolean
     Status?: boolean
     Active?: boolean
@@ -5225,8 +5288,9 @@ export namespace Prisma {
   export type CategoriesSelectScalar = {
     Id?: boolean
     Name?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     RestaurantId?: boolean
     Status?: boolean
     Active?: boolean
@@ -5248,8 +5312,9 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       Id: number
       Name: string
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
       RestaurantId: number
       Status: boolean
       Active: boolean
@@ -5652,8 +5717,9 @@ export namespace Prisma {
   interface CategoriesFieldRefs {
     readonly Id: FieldRef<"Categories", 'Int'>
     readonly Name: FieldRef<"Categories", 'String'>
-    readonly CreatedTime: FieldRef<"Categories", 'DateTime'>
-    readonly UpdateTime: FieldRef<"Categories", 'DateTime'>
+    readonly CreatedAt: FieldRef<"Categories", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Categories", 'DateTime'>
+    readonly DeletedAt: FieldRef<"Categories", 'DateTime'>
     readonly RestaurantId: FieldRef<"Categories", 'Int'>
     readonly Status: FieldRef<"Categories", 'Boolean'>
     readonly Active: FieldRef<"Categories", 'Boolean'>
@@ -6034,8 +6100,9 @@ export namespace Prisma {
   export type OrderMinAggregateOutputType = {
     Id: number | null
     Status: $Enums.Status | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     Paid: boolean | null
     Active: boolean | null
     UserId: number | null
@@ -6046,8 +6113,9 @@ export namespace Prisma {
   export type OrderMaxAggregateOutputType = {
     Id: number | null
     Status: $Enums.Status | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     Paid: boolean | null
     Active: boolean | null
     UserId: number | null
@@ -6058,8 +6126,9 @@ export namespace Prisma {
   export type OrderCountAggregateOutputType = {
     Id: number
     Status: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     Paid: number
     Active: number
     UserId: number
@@ -6086,8 +6155,9 @@ export namespace Prisma {
   export type OrderMinAggregateInputType = {
     Id?: true
     Status?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Paid?: true
     Active?: true
     UserId?: true
@@ -6098,8 +6168,9 @@ export namespace Prisma {
   export type OrderMaxAggregateInputType = {
     Id?: true
     Status?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Paid?: true
     Active?: true
     UserId?: true
@@ -6110,8 +6181,9 @@ export namespace Prisma {
   export type OrderCountAggregateInputType = {
     Id?: true
     Status?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Paid?: true
     Active?: true
     UserId?: true
@@ -6209,8 +6281,9 @@ export namespace Prisma {
   export type OrderGroupByOutputType = {
     Id: number
     Status: $Enums.Status
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     Paid: boolean
     Active: boolean
     UserId: number
@@ -6240,8 +6313,9 @@ export namespace Prisma {
   export type OrderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     Id?: boolean
     Status?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Paid?: boolean
     Active?: boolean
     UserId?: boolean
@@ -6257,8 +6331,9 @@ export namespace Prisma {
   export type OrderSelectScalar = {
     Id?: boolean
     Status?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Paid?: boolean
     Active?: boolean
     UserId?: boolean
@@ -6286,8 +6361,9 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       Id: number
       Status: $Enums.Status
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
       Paid: boolean
       Active: boolean
       UserId: number
@@ -6696,8 +6772,9 @@ export namespace Prisma {
   interface OrderFieldRefs {
     readonly Id: FieldRef<"Order", 'Int'>
     readonly Status: FieldRef<"Order", 'Status'>
-    readonly CreatedTime: FieldRef<"Order", 'DateTime'>
-    readonly UpdateTime: FieldRef<"Order", 'DateTime'>
+    readonly CreatedAt: FieldRef<"Order", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Order", 'DateTime'>
+    readonly DeletedAt: FieldRef<"Order", 'DateTime'>
     readonly Paid: FieldRef<"Order", 'Boolean'>
     readonly Active: FieldRef<"Order", 'Boolean'>
     readonly UserId: FieldRef<"Order", 'Int'>
@@ -7102,8 +7179,8 @@ export namespace Prisma {
     Id: number | null
     Quantity: number | null
     OrderId: number | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
     VariationId: number | null
   }
 
@@ -7111,8 +7188,8 @@ export namespace Prisma {
     Id: number | null
     Quantity: number | null
     OrderId: number | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
     VariationId: number | null
   }
 
@@ -7120,8 +7197,8 @@ export namespace Prisma {
     Id: number
     Quantity: number
     OrderId: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
     VariationId: number
     _all: number
   }
@@ -7145,8 +7222,8 @@ export namespace Prisma {
     Id?: true
     Quantity?: true
     OrderId?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     VariationId?: true
   }
 
@@ -7154,8 +7231,8 @@ export namespace Prisma {
     Id?: true
     Quantity?: true
     OrderId?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     VariationId?: true
   }
 
@@ -7163,8 +7240,8 @@ export namespace Prisma {
     Id?: true
     Quantity?: true
     OrderId?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     VariationId?: true
     _all?: true
   }
@@ -7259,8 +7336,8 @@ export namespace Prisma {
     Id: number
     Quantity: number
     OrderId: number
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
     VariationId: number
     _count: ProductOrderCountAggregateOutputType | null
     _avg: ProductOrderAvgAggregateOutputType | null
@@ -7287,8 +7364,8 @@ export namespace Prisma {
     Id?: boolean
     Quantity?: boolean
     OrderId?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     VariationId?: boolean
     Order?: boolean | OrderDefaultArgs<ExtArgs>
     Variation?: boolean | VariationsDefaultArgs<ExtArgs>
@@ -7298,8 +7375,8 @@ export namespace Prisma {
     Id?: boolean
     Quantity?: boolean
     OrderId?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     VariationId?: boolean
   }
 
@@ -7319,8 +7396,8 @@ export namespace Prisma {
       Id: number
       Quantity: number
       OrderId: number
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
       VariationId: number
     }, ExtArgs["result"]["productOrder"]>
     composites: {}
@@ -7722,8 +7799,8 @@ export namespace Prisma {
     readonly Id: FieldRef<"ProductOrder", 'Int'>
     readonly Quantity: FieldRef<"ProductOrder", 'Int'>
     readonly OrderId: FieldRef<"ProductOrder", 'Int'>
-    readonly CreatedTime: FieldRef<"ProductOrder", 'DateTime'>
-    readonly UpdateTime: FieldRef<"ProductOrder", 'DateTime'>
+    readonly CreatedAt: FieldRef<"ProductOrder", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"ProductOrder", 'DateTime'>
     readonly VariationId: FieldRef<"ProductOrder", 'Int'>
   }
     
@@ -8068,14 +8145,14 @@ export namespace Prisma {
     Id: number | null
     Size: number | null
     RestaurantId: number | null
-    ProductId: number | null
+    productsId: number | null
   }
 
   export type ProductImagesSumAggregateOutputType = {
     Id: number | null
     Size: number | null
     RestaurantId: number | null
-    ProductId: number | null
+    productsId: number | null
   }
 
   export type ProductImagesMinAggregateOutputType = {
@@ -8084,10 +8161,11 @@ export namespace Prisma {
     ImagePath: string | null
     Size: number | null
     RestaurantId: number | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     Active: boolean | null
-    ProductId: number | null
+    productsId: number | null
   }
 
   export type ProductImagesMaxAggregateOutputType = {
@@ -8096,10 +8174,11 @@ export namespace Prisma {
     ImagePath: string | null
     Size: number | null
     RestaurantId: number | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     Active: boolean | null
-    ProductId: number | null
+    productsId: number | null
   }
 
   export type ProductImagesCountAggregateOutputType = {
@@ -8108,10 +8187,11 @@ export namespace Prisma {
     ImagePath: number
     Size: number
     RestaurantId: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     Active: number
-    ProductId: number
+    productsId: number
     _all: number
   }
 
@@ -8120,14 +8200,14 @@ export namespace Prisma {
     Id?: true
     Size?: true
     RestaurantId?: true
-    ProductId?: true
+    productsId?: true
   }
 
   export type ProductImagesSumAggregateInputType = {
     Id?: true
     Size?: true
     RestaurantId?: true
-    ProductId?: true
+    productsId?: true
   }
 
   export type ProductImagesMinAggregateInputType = {
@@ -8136,10 +8216,11 @@ export namespace Prisma {
     ImagePath?: true
     Size?: true
     RestaurantId?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Active?: true
-    ProductId?: true
+    productsId?: true
   }
 
   export type ProductImagesMaxAggregateInputType = {
@@ -8148,10 +8229,11 @@ export namespace Prisma {
     ImagePath?: true
     Size?: true
     RestaurantId?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Active?: true
-    ProductId?: true
+    productsId?: true
   }
 
   export type ProductImagesCountAggregateInputType = {
@@ -8160,10 +8242,11 @@ export namespace Prisma {
     ImagePath?: true
     Size?: true
     RestaurantId?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Active?: true
-    ProductId?: true
+    productsId?: true
     _all?: true
   }
 
@@ -8259,10 +8342,11 @@ export namespace Prisma {
     ImagePath: string
     Size: number
     RestaurantId: number
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     Active: boolean
-    ProductId: number | null
+    productsId: number | null
     _count: ProductImagesCountAggregateOutputType | null
     _avg: ProductImagesAvgAggregateOutputType | null
     _sum: ProductImagesSumAggregateOutputType | null
@@ -8290,12 +8374,13 @@ export namespace Prisma {
     ImagePath?: boolean
     Size?: boolean
     RestaurantId?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Active?: boolean
-    ProductId?: boolean
-    Products?: boolean | ProductImages$ProductsArgs<ExtArgs>
+    productsId?: boolean
     Restaurant?: boolean | RestaurantsDefaultArgs<ExtArgs>
+    Products?: boolean | ProductImages$ProductsArgs<ExtArgs>
   }, ExtArgs["result"]["productImages"]>
 
   export type ProductImagesSelectScalar = {
@@ -8304,23 +8389,24 @@ export namespace Prisma {
     ImagePath?: boolean
     Size?: boolean
     RestaurantId?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Active?: boolean
-    ProductId?: boolean
+    productsId?: boolean
   }
 
   export type ProductImagesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Products?: boolean | ProductImages$ProductsArgs<ExtArgs>
     Restaurant?: boolean | RestaurantsDefaultArgs<ExtArgs>
+    Products?: boolean | ProductImages$ProductsArgs<ExtArgs>
   }
 
 
   export type $ProductImagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ProductImages"
     objects: {
-      Products: Prisma.$ProductsPayload<ExtArgs> | null
       Restaurant: Prisma.$RestaurantsPayload<ExtArgs>
+      Products: Prisma.$ProductsPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       Id: number
@@ -8328,10 +8414,11 @@ export namespace Prisma {
       ImagePath: string
       Size: number
       RestaurantId: number
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
       Active: boolean
-      ProductId: number | null
+      productsId: number | null
     }, ExtArgs["result"]["productImages"]>
     composites: {}
   }
@@ -8697,9 +8784,9 @@ export namespace Prisma {
   export interface Prisma__ProductImagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    Products<T extends ProductImages$ProductsArgs<ExtArgs> = {}>(args?: Subset<T, ProductImages$ProductsArgs<ExtArgs>>): Prisma__ProductsClient<$Result.GetResult<Prisma.$ProductsPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
-
     Restaurant<T extends RestaurantsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RestaurantsDefaultArgs<ExtArgs>>): Prisma__RestaurantsClient<$Result.GetResult<Prisma.$RestaurantsPayload<ExtArgs>, T, 'findUniqueOrThrow'> | Null, Null, ExtArgs>;
+
+    Products<T extends ProductImages$ProductsArgs<ExtArgs> = {}>(args?: Subset<T, ProductImages$ProductsArgs<ExtArgs>>): Prisma__ProductsClient<$Result.GetResult<Prisma.$ProductsPayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -8734,10 +8821,11 @@ export namespace Prisma {
     readonly ImagePath: FieldRef<"ProductImages", 'String'>
     readonly Size: FieldRef<"ProductImages", 'Int'>
     readonly RestaurantId: FieldRef<"ProductImages", 'Int'>
-    readonly CreatedTime: FieldRef<"ProductImages", 'DateTime'>
-    readonly UpdateTime: FieldRef<"ProductImages", 'DateTime'>
+    readonly CreatedAt: FieldRef<"ProductImages", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"ProductImages", 'DateTime'>
+    readonly DeletedAt: FieldRef<"ProductImages", 'DateTime'>
     readonly Active: FieldRef<"ProductImages", 'Boolean'>
-    readonly ProductId: FieldRef<"ProductImages", 'Int'>
+    readonly productsId: FieldRef<"ProductImages", 'Int'>
   }
     
 
@@ -9109,8 +9197,10 @@ export namespace Prisma {
     Id: number | null
     Status: boolean | null
     Number: number | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    Barcode: string | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     Active: boolean | null
     RestaurantId: number | null
   }
@@ -9119,8 +9209,10 @@ export namespace Prisma {
     Id: number | null
     Status: boolean | null
     Number: number | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    Barcode: string | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
     Active: boolean | null
     RestaurantId: number | null
   }
@@ -9129,8 +9221,10 @@ export namespace Prisma {
     Id: number
     Status: number
     Number: number
-    CreatedTime: number
-    UpdateTime: number
+    Barcode: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
     Active: number
     RestaurantId: number
     _all: number
@@ -9153,8 +9247,10 @@ export namespace Prisma {
     Id?: true
     Status?: true
     Number?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    Barcode?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Active?: true
     RestaurantId?: true
   }
@@ -9163,8 +9259,10 @@ export namespace Prisma {
     Id?: true
     Status?: true
     Number?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    Barcode?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Active?: true
     RestaurantId?: true
   }
@@ -9173,8 +9271,10 @@ export namespace Prisma {
     Id?: true
     Status?: true
     Number?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    Barcode?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
     Active?: true
     RestaurantId?: true
     _all?: true
@@ -9270,8 +9370,10 @@ export namespace Prisma {
     Id: number
     Status: boolean
     Number: number
-    CreatedTime: Date
-    UpdateTime: Date
+    Barcode: string
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
     Active: boolean
     RestaurantId: number
     _count: TableCountAggregateOutputType | null
@@ -9299,8 +9401,10 @@ export namespace Prisma {
     Id?: boolean
     Status?: boolean
     Number?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    Barcode?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Active?: boolean
     RestaurantId?: boolean
     Order?: boolean | Table$OrderArgs<ExtArgs>
@@ -9312,8 +9416,10 @@ export namespace Prisma {
     Id?: boolean
     Status?: boolean
     Number?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    Barcode?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
     Active?: boolean
     RestaurantId?: boolean
   }
@@ -9335,8 +9441,10 @@ export namespace Prisma {
       Id: number
       Status: boolean
       Number: number
-      CreatedTime: Date
-      UpdateTime: Date
+      Barcode: string
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
       Active: boolean
       RestaurantId: number
     }, ExtArgs["result"]["table"]>
@@ -9739,8 +9847,10 @@ export namespace Prisma {
     readonly Id: FieldRef<"Table", 'Int'>
     readonly Status: FieldRef<"Table", 'Boolean'>
     readonly Number: FieldRef<"Table", 'Int'>
-    readonly CreatedTime: FieldRef<"Table", 'DateTime'>
-    readonly UpdateTime: FieldRef<"Table", 'DateTime'>
+    readonly Barcode: FieldRef<"Table", 'String'>
+    readonly CreatedAt: FieldRef<"Table", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Table", 'DateTime'>
+    readonly DeletedAt: FieldRef<"Table", 'DateTime'>
     readonly Active: FieldRef<"Table", 'Boolean'>
     readonly RestaurantId: FieldRef<"Table", 'Int'>
   }
@@ -10120,8 +10230,8 @@ export namespace Prisma {
     OrderId: number | null
     Amount: number | null
     PaymentType: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type PaymentsMaxAggregateOutputType = {
@@ -10129,8 +10239,8 @@ export namespace Prisma {
     OrderId: number | null
     Amount: number | null
     PaymentType: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
   }
 
   export type PaymentsCountAggregateOutputType = {
@@ -10138,8 +10248,8 @@ export namespace Prisma {
     OrderId: number
     Amount: number
     PaymentType: number
-    CreatedTime: number
-    UpdateTime: number
+    CreatedAt: number
+    UpdatedAt: number
     _all: number
   }
 
@@ -10161,8 +10271,8 @@ export namespace Prisma {
     OrderId?: true
     Amount?: true
     PaymentType?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type PaymentsMaxAggregateInputType = {
@@ -10170,8 +10280,8 @@ export namespace Prisma {
     OrderId?: true
     Amount?: true
     PaymentType?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
   }
 
   export type PaymentsCountAggregateInputType = {
@@ -10179,8 +10289,8 @@ export namespace Prisma {
     OrderId?: true
     Amount?: true
     PaymentType?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    CreatedAt?: true
+    UpdatedAt?: true
     _all?: true
   }
 
@@ -10275,8 +10385,8 @@ export namespace Prisma {
     OrderId: number
     Amount: number
     PaymentType: string
-    CreatedTime: Date
-    UpdateTime: Date
+    CreatedAt: Date
+    UpdatedAt: Date
     _count: PaymentsCountAggregateOutputType | null
     _avg: PaymentsAvgAggregateOutputType | null
     _sum: PaymentsSumAggregateOutputType | null
@@ -10303,8 +10413,8 @@ export namespace Prisma {
     OrderId?: boolean
     Amount?: boolean
     PaymentType?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
     Order?: boolean | OrderDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["payments"]>
 
@@ -10313,8 +10423,8 @@ export namespace Prisma {
     OrderId?: boolean
     Amount?: boolean
     PaymentType?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
   }
 
   export type PaymentsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10332,8 +10442,8 @@ export namespace Prisma {
       OrderId: number
       Amount: number
       PaymentType: string
-      CreatedTime: Date
-      UpdateTime: Date
+      CreatedAt: Date
+      UpdatedAt: Date
     }, ExtArgs["result"]["payments"]>
     composites: {}
   }
@@ -10733,8 +10843,8 @@ export namespace Prisma {
     readonly OrderId: FieldRef<"Payments", 'Int'>
     readonly Amount: FieldRef<"Payments", 'Int'>
     readonly PaymentType: FieldRef<"Payments", 'String'>
-    readonly CreatedTime: FieldRef<"Payments", 'DateTime'>
-    readonly UpdateTime: FieldRef<"Payments", 'DateTime'>
+    readonly CreatedAt: FieldRef<"Payments", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"Payments", 'DateTime'>
   }
     
 
@@ -11080,7 +11190,10 @@ export namespace Prisma {
     Id: 'Id',
     Name: 'Name',
     RestaurantId: 'RestaurantId',
-    Active: 'Active'
+    Active: 'Active',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt'
   };
 
   export type RestaurantsScalarFieldEnum = (typeof RestaurantsScalarFieldEnum)[keyof typeof RestaurantsScalarFieldEnum]
@@ -11091,8 +11204,9 @@ export namespace Prisma {
     Name: 'Name',
     Description: 'Description',
     ImgUrl: 'ImgUrl',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
     RestaurantId: 'RestaurantId',
     CategoryId: 'CategoryId',
     Status: 'Status',
@@ -11106,8 +11220,9 @@ export namespace Prisma {
     Id: 'Id',
     Name: 'Name',
     Value: 'Value',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
     ProductId: 'ProductId',
     RestaurantId: 'RestaurantId',
     Active: 'Active'
@@ -11119,8 +11234,9 @@ export namespace Prisma {
   export const CategoriesScalarFieldEnum: {
     Id: 'Id',
     Name: 'Name',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
     RestaurantId: 'RestaurantId',
     Status: 'Status',
     Active: 'Active'
@@ -11132,8 +11248,9 @@ export namespace Prisma {
   export const OrderScalarFieldEnum: {
     Id: 'Id',
     Status: 'Status',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
     Paid: 'Paid',
     Active: 'Active',
     UserId: 'UserId',
@@ -11148,8 +11265,8 @@ export namespace Prisma {
     Id: 'Id',
     Quantity: 'Quantity',
     OrderId: 'OrderId',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
     VariationId: 'VariationId'
   };
 
@@ -11162,10 +11279,11 @@ export namespace Prisma {
     ImagePath: 'ImagePath',
     Size: 'Size',
     RestaurantId: 'RestaurantId',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
     Active: 'Active',
-    ProductId: 'ProductId'
+    productsId: 'productsId'
   };
 
   export type ProductImagesScalarFieldEnum = (typeof ProductImagesScalarFieldEnum)[keyof typeof ProductImagesScalarFieldEnum]
@@ -11175,8 +11293,10 @@ export namespace Prisma {
     Id: 'Id',
     Status: 'Status',
     Number: 'Number',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime',
+    Barcode: 'Barcode',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
     Active: 'Active',
     RestaurantId: 'RestaurantId'
   };
@@ -11189,8 +11309,8 @@ export namespace Prisma {
     OrderId: 'OrderId',
     Amount: 'Amount',
     PaymentType: 'PaymentType',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime'
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt'
   };
 
   export type PaymentsScalarFieldEnum = (typeof PaymentsScalarFieldEnum)[keyof typeof PaymentsScalarFieldEnum]
@@ -11211,6 +11331,14 @@ export namespace Prisma {
   export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
   export const JsonNullValueFilter: {
     DbNull: typeof DbNull,
     JsonNull: typeof JsonNull,
@@ -11218,14 +11346,6 @@ export namespace Prisma {
   };
 
   export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
-
-
-  export const NullsOrder: {
-    first: 'first',
-    last: 'last'
-  };
-
-  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -11255,16 +11375,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Json'
+   * Reference to a field of type 'DateTime'
    */
-  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
     
 
 
   /**
-   * Reference to a field of type 'DateTime'
+   * Reference to a field of type 'Json'
    */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
     
 
 
@@ -11293,6 +11413,9 @@ export namespace Prisma {
     Name?: StringFilter<"Restaurants"> | string
     RestaurantId?: IntFilter<"Restaurants"> | number
     Active?: BoolFilter<"Restaurants"> | boolean
+    CreatedAt?: DateTimeFilter<"Restaurants"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Restaurants"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Restaurants"> | Date | string | null
     Categories?: CategoriesListRelationFilter
     Order?: OrderListRelationFilter
     ProductImages?: ProductImagesListRelationFilter
@@ -11306,6 +11429,9 @@ export namespace Prisma {
     Name?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Categories?: CategoriesOrderByRelationAggregateInput
     Order?: OrderOrderByRelationAggregateInput
     ProductImages?: ProductImagesOrderByRelationAggregateInput
@@ -11322,6 +11448,9 @@ export namespace Prisma {
     NOT?: RestaurantsWhereInput | RestaurantsWhereInput[]
     Name?: StringFilter<"Restaurants"> | string
     Active?: BoolFilter<"Restaurants"> | boolean
+    CreatedAt?: DateTimeFilter<"Restaurants"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Restaurants"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Restaurants"> | Date | string | null
     Categories?: CategoriesListRelationFilter
     Order?: OrderListRelationFilter
     ProductImages?: ProductImagesListRelationFilter
@@ -11335,6 +11464,9 @@ export namespace Prisma {
     Name?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     _count?: RestaurantsCountOrderByAggregateInput
     _avg?: RestaurantsAvgOrderByAggregateInput
     _max?: RestaurantsMaxOrderByAggregateInput
@@ -11350,6 +11482,9 @@ export namespace Prisma {
     Name?: StringWithAggregatesFilter<"Restaurants"> | string
     RestaurantId?: IntWithAggregatesFilter<"Restaurants"> | number
     Active?: BoolWithAggregatesFilter<"Restaurants"> | boolean
+    CreatedAt?: DateTimeWithAggregatesFilter<"Restaurants"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Restaurants"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"Restaurants"> | Date | string | null
   }
 
   export type ProductsWhereInput = {
@@ -11360,8 +11495,9 @@ export namespace Prisma {
     Name?: StringFilter<"Products"> | string
     Description?: StringFilter<"Products"> | string
     ImgUrl?: JsonFilter<"Products">
-    CreatedTime?: DateTimeFilter<"Products"> | Date | string
-    UpdateTime?: DateTimeFilter<"Products"> | Date | string
+    CreatedAt?: DateTimeFilter<"Products"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Products"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Products"> | Date | string | null
     RestaurantId?: IntFilter<"Products"> | number
     CategoryId?: IntFilter<"Products"> | number
     Status?: BoolFilter<"Products"> | boolean
@@ -11377,8 +11513,9 @@ export namespace Prisma {
     Name?: SortOrder
     Description?: SortOrder
     ImgUrl?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     RestaurantId?: SortOrder
     CategoryId?: SortOrder
     Status?: SortOrder
@@ -11397,8 +11534,9 @@ export namespace Prisma {
     Name?: StringFilter<"Products"> | string
     Description?: StringFilter<"Products"> | string
     ImgUrl?: JsonFilter<"Products">
-    CreatedTime?: DateTimeFilter<"Products"> | Date | string
-    UpdateTime?: DateTimeFilter<"Products"> | Date | string
+    CreatedAt?: DateTimeFilter<"Products"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Products"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Products"> | Date | string | null
     RestaurantId?: IntFilter<"Products"> | number
     CategoryId?: IntFilter<"Products"> | number
     Status?: BoolFilter<"Products"> | boolean
@@ -11414,8 +11552,9 @@ export namespace Prisma {
     Name?: SortOrder
     Description?: SortOrder
     ImgUrl?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     RestaurantId?: SortOrder
     CategoryId?: SortOrder
     Status?: SortOrder
@@ -11435,8 +11574,9 @@ export namespace Prisma {
     Name?: StringWithAggregatesFilter<"Products"> | string
     Description?: StringWithAggregatesFilter<"Products"> | string
     ImgUrl?: JsonWithAggregatesFilter<"Products">
-    CreatedTime?: DateTimeWithAggregatesFilter<"Products"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"Products"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Products"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Products"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"Products"> | Date | string | null
     RestaurantId?: IntWithAggregatesFilter<"Products"> | number
     CategoryId?: IntWithAggregatesFilter<"Products"> | number
     Status?: BoolWithAggregatesFilter<"Products"> | boolean
@@ -11450,8 +11590,9 @@ export namespace Prisma {
     Id?: IntFilter<"Variations"> | number
     Name?: StringFilter<"Variations"> | string
     Value?: StringFilter<"Variations"> | string
-    CreatedTime?: DateTimeFilter<"Variations"> | Date | string
-    UpdateTime?: DateTimeFilter<"Variations"> | Date | string
+    CreatedAt?: DateTimeFilter<"Variations"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Variations"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Variations"> | Date | string | null
     ProductId?: IntFilter<"Variations"> | number
     RestaurantId?: IntFilter<"Variations"> | number
     Active?: BoolFilter<"Variations"> | boolean
@@ -11464,8 +11605,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Value?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     ProductId?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
@@ -11481,8 +11623,9 @@ export namespace Prisma {
     NOT?: VariationsWhereInput | VariationsWhereInput[]
     Name?: StringFilter<"Variations"> | string
     Value?: StringFilter<"Variations"> | string
-    CreatedTime?: DateTimeFilter<"Variations"> | Date | string
-    UpdateTime?: DateTimeFilter<"Variations"> | Date | string
+    CreatedAt?: DateTimeFilter<"Variations"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Variations"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Variations"> | Date | string | null
     ProductId?: IntFilter<"Variations"> | number
     RestaurantId?: IntFilter<"Variations"> | number
     Active?: BoolFilter<"Variations"> | boolean
@@ -11495,8 +11638,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Value?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     ProductId?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
@@ -11514,8 +11658,9 @@ export namespace Prisma {
     Id?: IntWithAggregatesFilter<"Variations"> | number
     Name?: StringWithAggregatesFilter<"Variations"> | string
     Value?: StringWithAggregatesFilter<"Variations"> | string
-    CreatedTime?: DateTimeWithAggregatesFilter<"Variations"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"Variations"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Variations"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Variations"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"Variations"> | Date | string | null
     ProductId?: IntWithAggregatesFilter<"Variations"> | number
     RestaurantId?: IntWithAggregatesFilter<"Variations"> | number
     Active?: BoolWithAggregatesFilter<"Variations"> | boolean
@@ -11527,8 +11672,9 @@ export namespace Prisma {
     NOT?: CategoriesWhereInput | CategoriesWhereInput[]
     Id?: IntFilter<"Categories"> | number
     Name?: StringFilter<"Categories"> | string
-    CreatedTime?: DateTimeFilter<"Categories"> | Date | string
-    UpdateTime?: DateTimeFilter<"Categories"> | Date | string
+    CreatedAt?: DateTimeFilter<"Categories"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Categories"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Categories"> | Date | string | null
     RestaurantId?: IntFilter<"Categories"> | number
     Status?: BoolFilter<"Categories"> | boolean
     Active?: BoolFilter<"Categories"> | boolean
@@ -11539,8 +11685,9 @@ export namespace Prisma {
   export type CategoriesOrderByWithRelationInput = {
     Id?: SortOrder
     Name?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     RestaurantId?: SortOrder
     Status?: SortOrder
     Active?: SortOrder
@@ -11554,8 +11701,9 @@ export namespace Prisma {
     OR?: CategoriesWhereInput[]
     NOT?: CategoriesWhereInput | CategoriesWhereInput[]
     Name?: StringFilter<"Categories"> | string
-    CreatedTime?: DateTimeFilter<"Categories"> | Date | string
-    UpdateTime?: DateTimeFilter<"Categories"> | Date | string
+    CreatedAt?: DateTimeFilter<"Categories"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Categories"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Categories"> | Date | string | null
     RestaurantId?: IntFilter<"Categories"> | number
     Status?: BoolFilter<"Categories"> | boolean
     Active?: BoolFilter<"Categories"> | boolean
@@ -11566,8 +11714,9 @@ export namespace Prisma {
   export type CategoriesOrderByWithAggregationInput = {
     Id?: SortOrder
     Name?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     RestaurantId?: SortOrder
     Status?: SortOrder
     Active?: SortOrder
@@ -11584,8 +11733,9 @@ export namespace Prisma {
     NOT?: CategoriesScalarWhereWithAggregatesInput | CategoriesScalarWhereWithAggregatesInput[]
     Id?: IntWithAggregatesFilter<"Categories"> | number
     Name?: StringWithAggregatesFilter<"Categories"> | string
-    CreatedTime?: DateTimeWithAggregatesFilter<"Categories"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"Categories"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Categories"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Categories"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"Categories"> | Date | string | null
     RestaurantId?: IntWithAggregatesFilter<"Categories"> | number
     Status?: BoolWithAggregatesFilter<"Categories"> | boolean
     Active?: BoolWithAggregatesFilter<"Categories"> | boolean
@@ -11597,8 +11747,9 @@ export namespace Prisma {
     NOT?: OrderWhereInput | OrderWhereInput[]
     Id?: IntFilter<"Order"> | number
     Status?: EnumStatusFilter<"Order"> | $Enums.Status
-    CreatedTime?: DateTimeFilter<"Order"> | Date | string
-    UpdateTime?: DateTimeFilter<"Order"> | Date | string
+    CreatedAt?: DateTimeFilter<"Order"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Order"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Order"> | Date | string | null
     Paid?: BoolFilter<"Order"> | boolean
     Active?: BoolFilter<"Order"> | boolean
     UserId?: IntFilter<"Order"> | number
@@ -11613,8 +11764,9 @@ export namespace Prisma {
   export type OrderOrderByWithRelationInput = {
     Id?: SortOrder
     Status?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Paid?: SortOrder
     Active?: SortOrder
     UserId?: SortOrder
@@ -11632,8 +11784,9 @@ export namespace Prisma {
     OR?: OrderWhereInput[]
     NOT?: OrderWhereInput | OrderWhereInput[]
     Status?: EnumStatusFilter<"Order"> | $Enums.Status
-    CreatedTime?: DateTimeFilter<"Order"> | Date | string
-    UpdateTime?: DateTimeFilter<"Order"> | Date | string
+    CreatedAt?: DateTimeFilter<"Order"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Order"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Order"> | Date | string | null
     Paid?: BoolFilter<"Order"> | boolean
     Active?: BoolFilter<"Order"> | boolean
     UserId?: IntFilter<"Order"> | number
@@ -11648,8 +11801,9 @@ export namespace Prisma {
   export type OrderOrderByWithAggregationInput = {
     Id?: SortOrder
     Status?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Paid?: SortOrder
     Active?: SortOrder
     UserId?: SortOrder
@@ -11668,8 +11822,9 @@ export namespace Prisma {
     NOT?: OrderScalarWhereWithAggregatesInput | OrderScalarWhereWithAggregatesInput[]
     Id?: IntWithAggregatesFilter<"Order"> | number
     Status?: EnumStatusWithAggregatesFilter<"Order"> | $Enums.Status
-    CreatedTime?: DateTimeWithAggregatesFilter<"Order"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"Order"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Order"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Order"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"Order"> | Date | string | null
     Paid?: BoolWithAggregatesFilter<"Order"> | boolean
     Active?: BoolWithAggregatesFilter<"Order"> | boolean
     UserId?: IntWithAggregatesFilter<"Order"> | number
@@ -11684,8 +11839,8 @@ export namespace Prisma {
     Id?: IntFilter<"ProductOrder"> | number
     Quantity?: IntFilter<"ProductOrder"> | number
     OrderId?: IntFilter<"ProductOrder"> | number
-    CreatedTime?: DateTimeFilter<"ProductOrder"> | Date | string
-    UpdateTime?: DateTimeFilter<"ProductOrder"> | Date | string
+    CreatedAt?: DateTimeFilter<"ProductOrder"> | Date | string
+    UpdatedAt?: DateTimeFilter<"ProductOrder"> | Date | string
     VariationId?: IntFilter<"ProductOrder"> | number
     Order?: XOR<OrderRelationFilter, OrderWhereInput>
     Variation?: XOR<VariationsRelationFilter, VariationsWhereInput>
@@ -11695,8 +11850,8 @@ export namespace Prisma {
     Id?: SortOrder
     Quantity?: SortOrder
     OrderId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     VariationId?: SortOrder
     Order?: OrderOrderByWithRelationInput
     Variation?: VariationsOrderByWithRelationInput
@@ -11709,8 +11864,8 @@ export namespace Prisma {
     NOT?: ProductOrderWhereInput | ProductOrderWhereInput[]
     Quantity?: IntFilter<"ProductOrder"> | number
     OrderId?: IntFilter<"ProductOrder"> | number
-    CreatedTime?: DateTimeFilter<"ProductOrder"> | Date | string
-    UpdateTime?: DateTimeFilter<"ProductOrder"> | Date | string
+    CreatedAt?: DateTimeFilter<"ProductOrder"> | Date | string
+    UpdatedAt?: DateTimeFilter<"ProductOrder"> | Date | string
     VariationId?: IntFilter<"ProductOrder"> | number
     Order?: XOR<OrderRelationFilter, OrderWhereInput>
     Variation?: XOR<VariationsRelationFilter, VariationsWhereInput>
@@ -11720,8 +11875,8 @@ export namespace Prisma {
     Id?: SortOrder
     Quantity?: SortOrder
     OrderId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     VariationId?: SortOrder
     _count?: ProductOrderCountOrderByAggregateInput
     _avg?: ProductOrderAvgOrderByAggregateInput
@@ -11737,8 +11892,8 @@ export namespace Prisma {
     Id?: IntWithAggregatesFilter<"ProductOrder"> | number
     Quantity?: IntWithAggregatesFilter<"ProductOrder"> | number
     OrderId?: IntWithAggregatesFilter<"ProductOrder"> | number
-    CreatedTime?: DateTimeWithAggregatesFilter<"ProductOrder"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"ProductOrder"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"ProductOrder"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"ProductOrder"> | Date | string
     VariationId?: IntWithAggregatesFilter<"ProductOrder"> | number
   }
 
@@ -11751,12 +11906,13 @@ export namespace Prisma {
     ImagePath?: StringFilter<"ProductImages"> | string
     Size?: IntFilter<"ProductImages"> | number
     RestaurantId?: IntFilter<"ProductImages"> | number
-    CreatedTime?: DateTimeFilter<"ProductImages"> | Date | string
-    UpdateTime?: DateTimeFilter<"ProductImages"> | Date | string
+    CreatedAt?: DateTimeFilter<"ProductImages"> | Date | string
+    UpdatedAt?: DateTimeFilter<"ProductImages"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"ProductImages"> | Date | string | null
     Active?: BoolFilter<"ProductImages"> | boolean
-    ProductId?: IntNullableFilter<"ProductImages"> | number | null
-    Products?: XOR<ProductsNullableRelationFilter, ProductsWhereInput> | null
+    productsId?: IntNullableFilter<"ProductImages"> | number | null
     Restaurant?: XOR<RestaurantsRelationFilter, RestaurantsWhereInput>
+    Products?: XOR<ProductsNullableRelationFilter, ProductsWhereInput> | null
   }
 
   export type ProductImagesOrderByWithRelationInput = {
@@ -11765,12 +11921,13 @@ export namespace Prisma {
     ImagePath?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Active?: SortOrder
-    ProductId?: SortOrderInput | SortOrder
-    Products?: ProductsOrderByWithRelationInput
+    productsId?: SortOrderInput | SortOrder
     Restaurant?: RestaurantsOrderByWithRelationInput
+    Products?: ProductsOrderByWithRelationInput
   }
 
   export type ProductImagesWhereUniqueInput = Prisma.AtLeast<{
@@ -11782,12 +11939,13 @@ export namespace Prisma {
     ImagePath?: StringFilter<"ProductImages"> | string
     Size?: IntFilter<"ProductImages"> | number
     RestaurantId?: IntFilter<"ProductImages"> | number
-    CreatedTime?: DateTimeFilter<"ProductImages"> | Date | string
-    UpdateTime?: DateTimeFilter<"ProductImages"> | Date | string
+    CreatedAt?: DateTimeFilter<"ProductImages"> | Date | string
+    UpdatedAt?: DateTimeFilter<"ProductImages"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"ProductImages"> | Date | string | null
     Active?: BoolFilter<"ProductImages"> | boolean
-    ProductId?: IntNullableFilter<"ProductImages"> | number | null
-    Products?: XOR<ProductsNullableRelationFilter, ProductsWhereInput> | null
+    productsId?: IntNullableFilter<"ProductImages"> | number | null
     Restaurant?: XOR<RestaurantsRelationFilter, RestaurantsWhereInput>
+    Products?: XOR<ProductsNullableRelationFilter, ProductsWhereInput> | null
   }, "Id">
 
   export type ProductImagesOrderByWithAggregationInput = {
@@ -11796,10 +11954,11 @@ export namespace Prisma {
     ImagePath?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Active?: SortOrder
-    ProductId?: SortOrderInput | SortOrder
+    productsId?: SortOrderInput | SortOrder
     _count?: ProductImagesCountOrderByAggregateInput
     _avg?: ProductImagesAvgOrderByAggregateInput
     _max?: ProductImagesMaxOrderByAggregateInput
@@ -11816,10 +11975,11 @@ export namespace Prisma {
     ImagePath?: StringWithAggregatesFilter<"ProductImages"> | string
     Size?: IntWithAggregatesFilter<"ProductImages"> | number
     RestaurantId?: IntWithAggregatesFilter<"ProductImages"> | number
-    CreatedTime?: DateTimeWithAggregatesFilter<"ProductImages"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"ProductImages"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"ProductImages"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"ProductImages"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"ProductImages"> | Date | string | null
     Active?: BoolWithAggregatesFilter<"ProductImages"> | boolean
-    ProductId?: IntNullableWithAggregatesFilter<"ProductImages"> | number | null
+    productsId?: IntNullableWithAggregatesFilter<"ProductImages"> | number | null
   }
 
   export type TableWhereInput = {
@@ -11829,8 +11989,10 @@ export namespace Prisma {
     Id?: IntFilter<"Table"> | number
     Status?: BoolFilter<"Table"> | boolean
     Number?: IntFilter<"Table"> | number
-    CreatedTime?: DateTimeFilter<"Table"> | Date | string
-    UpdateTime?: DateTimeFilter<"Table"> | Date | string
+    Barcode?: StringFilter<"Table"> | string
+    CreatedAt?: DateTimeFilter<"Table"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Table"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Table"> | Date | string | null
     Active?: BoolFilter<"Table"> | boolean
     RestaurantId?: IntFilter<"Table"> | number
     Order?: OrderListRelationFilter
@@ -11841,8 +12003,10 @@ export namespace Prisma {
     Id?: SortOrder
     Status?: SortOrder
     Number?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Barcode?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Active?: SortOrder
     RestaurantId?: SortOrder
     Order?: OrderOrderByRelationAggregateInput
@@ -11856,8 +12020,10 @@ export namespace Prisma {
     NOT?: TableWhereInput | TableWhereInput[]
     Status?: BoolFilter<"Table"> | boolean
     Number?: IntFilter<"Table"> | number
-    CreatedTime?: DateTimeFilter<"Table"> | Date | string
-    UpdateTime?: DateTimeFilter<"Table"> | Date | string
+    Barcode?: StringFilter<"Table"> | string
+    CreatedAt?: DateTimeFilter<"Table"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Table"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Table"> | Date | string | null
     Active?: BoolFilter<"Table"> | boolean
     RestaurantId?: IntFilter<"Table"> | number
     Order?: OrderListRelationFilter
@@ -11868,8 +12034,10 @@ export namespace Prisma {
     Id?: SortOrder
     Status?: SortOrder
     Number?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Barcode?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
     Active?: SortOrder
     RestaurantId?: SortOrder
     _count?: TableCountOrderByAggregateInput
@@ -11886,8 +12054,10 @@ export namespace Prisma {
     Id?: IntWithAggregatesFilter<"Table"> | number
     Status?: BoolWithAggregatesFilter<"Table"> | boolean
     Number?: IntWithAggregatesFilter<"Table"> | number
-    CreatedTime?: DateTimeWithAggregatesFilter<"Table"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"Table"> | Date | string
+    Barcode?: StringWithAggregatesFilter<"Table"> | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Table"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Table"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"Table"> | Date | string | null
     Active?: BoolWithAggregatesFilter<"Table"> | boolean
     RestaurantId?: IntWithAggregatesFilter<"Table"> | number
   }
@@ -11900,8 +12070,8 @@ export namespace Prisma {
     OrderId?: IntFilter<"Payments"> | number
     Amount?: IntFilter<"Payments"> | number
     PaymentType?: StringFilter<"Payments"> | string
-    CreatedTime?: DateTimeFilter<"Payments"> | Date | string
-    UpdateTime?: DateTimeFilter<"Payments"> | Date | string
+    CreatedAt?: DateTimeFilter<"Payments"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Payments"> | Date | string
     Order?: XOR<OrderRelationFilter, OrderWhereInput>
   }
 
@@ -11910,8 +12080,8 @@ export namespace Prisma {
     OrderId?: SortOrder
     Amount?: SortOrder
     PaymentType?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     Order?: OrderOrderByWithRelationInput
   }
 
@@ -11923,8 +12093,8 @@ export namespace Prisma {
     OrderId?: IntFilter<"Payments"> | number
     Amount?: IntFilter<"Payments"> | number
     PaymentType?: StringFilter<"Payments"> | string
-    CreatedTime?: DateTimeFilter<"Payments"> | Date | string
-    UpdateTime?: DateTimeFilter<"Payments"> | Date | string
+    CreatedAt?: DateTimeFilter<"Payments"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Payments"> | Date | string
     Order?: XOR<OrderRelationFilter, OrderWhereInput>
   }, "Id">
 
@@ -11933,8 +12103,8 @@ export namespace Prisma {
     OrderId?: SortOrder
     Amount?: SortOrder
     PaymentType?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     _count?: PaymentsCountOrderByAggregateInput
     _avg?: PaymentsAvgOrderByAggregateInput
     _max?: PaymentsMaxOrderByAggregateInput
@@ -11950,14 +12120,17 @@ export namespace Prisma {
     OrderId?: IntWithAggregatesFilter<"Payments"> | number
     Amount?: IntWithAggregatesFilter<"Payments"> | number
     PaymentType?: StringWithAggregatesFilter<"Payments"> | string
-    CreatedTime?: DateTimeWithAggregatesFilter<"Payments"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"Payments"> | Date | string
+    CreatedAt?: DateTimeWithAggregatesFilter<"Payments"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"Payments"> | Date | string
   }
 
   export type RestaurantsCreateInput = {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesCreateNestedManyWithoutRestaurantInput
     Order?: OrderCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesCreateNestedManyWithoutRestaurantInput
@@ -11971,6 +12144,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesUncheckedCreateNestedManyWithoutRestaurantInput
     Order?: OrderUncheckedCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesUncheckedCreateNestedManyWithoutRestaurantInput
@@ -11983,6 +12159,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUpdateManyWithoutRestaurantNestedInput
@@ -11996,6 +12175,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUncheckedUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUncheckedUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -12009,12 +12191,18 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
   }
 
   export type RestaurantsUpdateManyMutationInput = {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type RestaurantsUncheckedUpdateManyInput = {
@@ -12022,14 +12210,18 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type ProductsCreateInput = {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     ProductImages?: ProductImagesCreateNestedManyWithoutProductsInput
@@ -12043,8 +12235,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     CategoryId: number
     Status?: boolean
@@ -12057,8 +12250,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     ProductImages?: ProductImagesUpdateManyWithoutProductsNestedInput
@@ -12072,8 +12266,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     CategoryId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
@@ -12087,8 +12282,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     CategoryId: number
     Status?: boolean
@@ -12099,8 +12295,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -12110,8 +12307,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     CategoryId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
@@ -12121,8 +12319,9 @@ export namespace Prisma {
   export type VariationsCreateInput = {
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     OrderProduct?: ProductOrderCreateNestedManyWithoutVariationInput
     Products: ProductsCreateNestedOneWithoutVariationsInput
@@ -12133,8 +12332,9 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     ProductId: number
     RestaurantId: number
     Active?: boolean
@@ -12144,8 +12344,9 @@ export namespace Prisma {
   export type VariationsUpdateInput = {
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     OrderProduct?: ProductOrderUpdateManyWithoutVariationNestedInput
     Products?: ProductsUpdateOneRequiredWithoutVariationsNestedInput
@@ -12156,8 +12357,9 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ProductId?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -12168,8 +12370,9 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     ProductId: number
     RestaurantId: number
     Active?: boolean
@@ -12178,8 +12381,9 @@ export namespace Prisma {
   export type VariationsUpdateManyMutationInput = {
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -12187,8 +12391,9 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ProductId?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -12196,8 +12401,9 @@ export namespace Prisma {
 
   export type CategoriesCreateInput = {
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     Restaurant: RestaurantsCreateNestedOneWithoutCategoriesInput
@@ -12207,8 +12413,9 @@ export namespace Prisma {
   export type CategoriesUncheckedCreateInput = {
     Id?: number
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Status?: boolean
     Active?: boolean
@@ -12217,8 +12424,9 @@ export namespace Prisma {
 
   export type CategoriesUpdateInput = {
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     Restaurant?: RestaurantsUpdateOneRequiredWithoutCategoriesNestedInput
@@ -12228,8 +12436,9 @@ export namespace Prisma {
   export type CategoriesUncheckedUpdateInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -12239,8 +12448,9 @@ export namespace Prisma {
   export type CategoriesCreateManyInput = {
     Id?: number
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Status?: boolean
     Active?: boolean
@@ -12248,8 +12458,9 @@ export namespace Prisma {
 
   export type CategoriesUpdateManyMutationInput = {
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -12257,8 +12468,9 @@ export namespace Prisma {
   export type CategoriesUncheckedUpdateManyInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -12266,8 +12478,9 @@ export namespace Prisma {
 
   export type OrderCreateInput = {
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -12280,8 +12493,9 @@ export namespace Prisma {
   export type OrderUncheckedCreateInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -12293,8 +12507,9 @@ export namespace Prisma {
 
   export type OrderUpdateInput = {
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -12307,8 +12522,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -12321,8 +12537,9 @@ export namespace Prisma {
   export type OrderCreateManyInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -12332,8 +12549,9 @@ export namespace Prisma {
 
   export type OrderUpdateManyMutationInput = {
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -12342,8 +12560,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateManyInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -12353,8 +12572,8 @@ export namespace Prisma {
 
   export type ProductOrderCreateInput = {
     Quantity: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     Order: OrderCreateNestedOneWithoutOrderProductsInput
     Variation: VariationsCreateNestedOneWithoutOrderProductInput
   }
@@ -12363,15 +12582,15 @@ export namespace Prisma {
     Id?: number
     Quantity: number
     OrderId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     VariationId: number
   }
 
   export type ProductOrderUpdateInput = {
     Quantity?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     Order?: OrderUpdateOneRequiredWithoutOrderProductsNestedInput
     Variation?: VariationsUpdateOneRequiredWithoutOrderProductNestedInput
   }
@@ -12380,8 +12599,8 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Quantity?: IntFieldUpdateOperationsInput | number
     OrderId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     VariationId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -12389,23 +12608,23 @@ export namespace Prisma {
     Id?: number
     Quantity: number
     OrderId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     VariationId: number
   }
 
   export type ProductOrderUpdateManyMutationInput = {
     Quantity?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductOrderUncheckedUpdateManyInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Quantity?: IntFieldUpdateOperationsInput | number
     OrderId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     VariationId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -12413,11 +12632,12 @@ export namespace Prisma {
     Name: string
     ImagePath: string
     Size: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
-    Products?: ProductsCreateNestedOneWithoutProductImagesInput
     Restaurant: RestaurantsCreateNestedOneWithoutProductImagesInput
+    Products?: ProductsCreateNestedOneWithoutProductImagesInput
   }
 
   export type ProductImagesUncheckedCreateInput = {
@@ -12426,21 +12646,23 @@ export namespace Prisma {
     ImagePath: string
     Size: number
     RestaurantId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
-    ProductId?: number | null
+    productsId?: number | null
   }
 
   export type ProductImagesUpdateInput = {
     Name?: StringFieldUpdateOperationsInput | string
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
-    Products?: ProductsUpdateOneWithoutProductImagesNestedInput
     Restaurant?: RestaurantsUpdateOneRequiredWithoutProductImagesNestedInput
+    Products?: ProductsUpdateOneWithoutProductImagesNestedInput
   }
 
   export type ProductImagesUncheckedUpdateInput = {
@@ -12449,10 +12671,11 @@ export namespace Prisma {
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
-    ProductId?: NullableIntFieldUpdateOperationsInput | number | null
+    productsId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type ProductImagesCreateManyInput = {
@@ -12461,18 +12684,20 @@ export namespace Prisma {
     ImagePath: string
     Size: number
     RestaurantId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
-    ProductId?: number | null
+    productsId?: number | null
   }
 
   export type ProductImagesUpdateManyMutationInput = {
     Name?: StringFieldUpdateOperationsInput | string
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -12482,17 +12707,20 @@ export namespace Prisma {
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
-    ProductId?: NullableIntFieldUpdateOperationsInput | number | null
+    productsId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type TableCreateInput = {
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Order?: OrderCreateNestedManyWithoutTableInput
     Restaurant: RestaurantsCreateNestedOneWithoutTableInput
@@ -12502,8 +12730,10 @@ export namespace Prisma {
     Id?: number
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     RestaurantId: number
     Order?: OrderUncheckedCreateNestedManyWithoutTableInput
@@ -12512,8 +12742,10 @@ export namespace Prisma {
   export type TableUpdateInput = {
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Order?: OrderUpdateManyWithoutTableNestedInput
     Restaurant?: RestaurantsUpdateOneRequiredWithoutTableNestedInput
@@ -12523,8 +12755,10 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Order?: OrderUncheckedUpdateManyWithoutTableNestedInput
@@ -12534,8 +12768,10 @@ export namespace Prisma {
     Id?: number
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     RestaurantId: number
   }
@@ -12543,8 +12779,10 @@ export namespace Prisma {
   export type TableUpdateManyMutationInput = {
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -12552,8 +12790,10 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     RestaurantId?: IntFieldUpdateOperationsInput | number
   }
@@ -12561,8 +12801,8 @@ export namespace Prisma {
   export type PaymentsCreateInput = {
     Amount: number
     PaymentType: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     Order: OrderCreateNestedOneWithoutPaymentsInput
   }
 
@@ -12571,15 +12811,15 @@ export namespace Prisma {
     OrderId: number
     Amount: number
     PaymentType: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type PaymentsUpdateInput = {
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     Order?: OrderUpdateOneRequiredWithoutPaymentsNestedInput
   }
 
@@ -12588,8 +12828,8 @@ export namespace Prisma {
     OrderId?: IntFieldUpdateOperationsInput | number
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PaymentsCreateManyInput = {
@@ -12597,15 +12837,15 @@ export namespace Prisma {
     OrderId: number
     Amount: number
     PaymentType: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type PaymentsUpdateManyMutationInput = {
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PaymentsUncheckedUpdateManyInput = {
@@ -12613,8 +12853,8 @@ export namespace Prisma {
     OrderId?: IntFieldUpdateOperationsInput | number
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -12645,6 +12885,28 @@ export namespace Prisma {
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type CategoriesListRelationFilter = {
@@ -12683,6 +12945,11 @@ export namespace Prisma {
     none?: VariationsWhereInput
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type CategoriesOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -12712,6 +12979,9 @@ export namespace Prisma {
     Name?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
   }
 
   export type RestaurantsAvgOrderByAggregateInput = {
@@ -12724,6 +12994,9 @@ export namespace Prisma {
     Name?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
   }
 
   export type RestaurantsMinOrderByAggregateInput = {
@@ -12731,6 +13004,9 @@ export namespace Prisma {
     Name?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
   }
 
   export type RestaurantsSumOrderByAggregateInput = {
@@ -12778,6 +13054,34 @@ export namespace Prisma {
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
   }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
   export type JsonFilter<$PrismaModel = never> = 
     | PatchUndefined<
         Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
@@ -12801,17 +13105,6 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type CategoriesRelationFilter = {
     is?: CategoriesWhereInput
     isNot?: CategoriesWhereInput
@@ -12827,8 +13120,9 @@ export namespace Prisma {
     Name?: SortOrder
     Description?: SortOrder
     ImgUrl?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     RestaurantId?: SortOrder
     CategoryId?: SortOrder
     Status?: SortOrder
@@ -12845,8 +13139,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Description?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     RestaurantId?: SortOrder
     CategoryId?: SortOrder
     Status?: SortOrder
@@ -12857,8 +13152,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Description?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     RestaurantId?: SortOrder
     CategoryId?: SortOrder
     Status?: SortOrder
@@ -12896,20 +13192,6 @@ export namespace Prisma {
     _max?: NestedJsonFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type ProductOrderListRelationFilter = {
     every?: ProductOrderWhereInput
     some?: ProductOrderWhereInput
@@ -12929,8 +13211,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Value?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     ProductId?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
@@ -12946,8 +13229,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Value?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     ProductId?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
@@ -12957,8 +13241,9 @@ export namespace Prisma {
     Id?: SortOrder
     Name?: SortOrder
     Value?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     ProductId?: SortOrder
     RestaurantId?: SortOrder
     Active?: SortOrder
@@ -12973,8 +13258,9 @@ export namespace Prisma {
   export type CategoriesCountOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     RestaurantId?: SortOrder
     Status?: SortOrder
     Active?: SortOrder
@@ -12988,8 +13274,9 @@ export namespace Prisma {
   export type CategoriesMaxOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     RestaurantId?: SortOrder
     Status?: SortOrder
     Active?: SortOrder
@@ -12998,8 +13285,9 @@ export namespace Prisma {
   export type CategoriesMinOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     RestaurantId?: SortOrder
     Status?: SortOrder
     Active?: SortOrder
@@ -13035,8 +13323,9 @@ export namespace Prisma {
   export type OrderCountOrderByAggregateInput = {
     Id?: SortOrder
     Status?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Paid?: SortOrder
     Active?: SortOrder
     UserId?: SortOrder
@@ -13054,8 +13343,9 @@ export namespace Prisma {
   export type OrderMaxOrderByAggregateInput = {
     Id?: SortOrder
     Status?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Paid?: SortOrder
     Active?: SortOrder
     UserId?: SortOrder
@@ -13066,8 +13356,9 @@ export namespace Prisma {
   export type OrderMinOrderByAggregateInput = {
     Id?: SortOrder
     Status?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Paid?: SortOrder
     Active?: SortOrder
     UserId?: SortOrder
@@ -13106,8 +13397,8 @@ export namespace Prisma {
     Id?: SortOrder
     Quantity?: SortOrder
     OrderId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     VariationId?: SortOrder
   }
 
@@ -13122,8 +13413,8 @@ export namespace Prisma {
     Id?: SortOrder
     Quantity?: SortOrder
     OrderId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     VariationId?: SortOrder
   }
 
@@ -13131,8 +13422,8 @@ export namespace Prisma {
     Id?: SortOrder
     Quantity?: SortOrder
     OrderId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
     VariationId?: SortOrder
   }
 
@@ -13159,28 +13450,24 @@ export namespace Prisma {
     isNot?: ProductsWhereInput | null
   }
 
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
   export type ProductImagesCountOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
     ImagePath?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Active?: SortOrder
-    ProductId?: SortOrder
+    productsId?: SortOrder
   }
 
   export type ProductImagesAvgOrderByAggregateInput = {
     Id?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    ProductId?: SortOrder
+    productsId?: SortOrder
   }
 
   export type ProductImagesMaxOrderByAggregateInput = {
@@ -13189,10 +13476,11 @@ export namespace Prisma {
     ImagePath?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Active?: SortOrder
-    ProductId?: SortOrder
+    productsId?: SortOrder
   }
 
   export type ProductImagesMinOrderByAggregateInput = {
@@ -13201,17 +13489,18 @@ export namespace Prisma {
     ImagePath?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Active?: SortOrder
-    ProductId?: SortOrder
+    productsId?: SortOrder
   }
 
   export type ProductImagesSumOrderByAggregateInput = {
     Id?: SortOrder
     Size?: SortOrder
     RestaurantId?: SortOrder
-    ProductId?: SortOrder
+    productsId?: SortOrder
   }
 
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -13234,8 +13523,10 @@ export namespace Prisma {
     Id?: SortOrder
     Status?: SortOrder
     Number?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Barcode?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Active?: SortOrder
     RestaurantId?: SortOrder
   }
@@ -13250,8 +13541,10 @@ export namespace Prisma {
     Id?: SortOrder
     Status?: SortOrder
     Number?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Barcode?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Active?: SortOrder
     RestaurantId?: SortOrder
   }
@@ -13260,8 +13553,10 @@ export namespace Prisma {
     Id?: SortOrder
     Status?: SortOrder
     Number?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Barcode?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
     Active?: SortOrder
     RestaurantId?: SortOrder
   }
@@ -13277,8 +13572,8 @@ export namespace Prisma {
     OrderId?: SortOrder
     Amount?: SortOrder
     PaymentType?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type PaymentsAvgOrderByAggregateInput = {
@@ -13292,8 +13587,8 @@ export namespace Prisma {
     OrderId?: SortOrder
     Amount?: SortOrder
     PaymentType?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type PaymentsMinOrderByAggregateInput = {
@@ -13301,8 +13596,8 @@ export namespace Prisma {
     OrderId?: SortOrder
     Amount?: SortOrder
     PaymentType?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
   }
 
   export type PaymentsSumOrderByAggregateInput = {
@@ -13409,6 +13704,14 @@ export namespace Prisma {
 
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type CategoriesUpdateManyWithoutRestaurantNestedInput = {
@@ -13617,10 +13920,6 @@ export namespace Prisma {
     connectOrCreate?: VariationsCreateOrConnectWithoutProductsInput | VariationsCreateOrConnectWithoutProductsInput[]
     createMany?: VariationsCreateManyProductsInputEnvelope
     connect?: VariationsWhereUniqueInput | VariationsWhereUniqueInput[]
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type ProductImagesUpdateManyWithoutProductsNestedInput = {
@@ -13965,16 +14264,24 @@ export namespace Prisma {
     update?: XOR<XOR<VariationsUpdateToOneWithWhereWithoutOrderProductInput, VariationsUpdateWithoutOrderProductInput>, VariationsUncheckedUpdateWithoutOrderProductInput>
   }
 
+  export type RestaurantsCreateNestedOneWithoutProductImagesInput = {
+    create?: XOR<RestaurantsCreateWithoutProductImagesInput, RestaurantsUncheckedCreateWithoutProductImagesInput>
+    connectOrCreate?: RestaurantsCreateOrConnectWithoutProductImagesInput
+    connect?: RestaurantsWhereUniqueInput
+  }
+
   export type ProductsCreateNestedOneWithoutProductImagesInput = {
     create?: XOR<ProductsCreateWithoutProductImagesInput, ProductsUncheckedCreateWithoutProductImagesInput>
     connectOrCreate?: ProductsCreateOrConnectWithoutProductImagesInput
     connect?: ProductsWhereUniqueInput
   }
 
-  export type RestaurantsCreateNestedOneWithoutProductImagesInput = {
+  export type RestaurantsUpdateOneRequiredWithoutProductImagesNestedInput = {
     create?: XOR<RestaurantsCreateWithoutProductImagesInput, RestaurantsUncheckedCreateWithoutProductImagesInput>
     connectOrCreate?: RestaurantsCreateOrConnectWithoutProductImagesInput
+    upsert?: RestaurantsUpsertWithoutProductImagesInput
     connect?: RestaurantsWhereUniqueInput
+    update?: XOR<XOR<RestaurantsUpdateToOneWithWhereWithoutProductImagesInput, RestaurantsUpdateWithoutProductImagesInput>, RestaurantsUncheckedUpdateWithoutProductImagesInput>
   }
 
   export type ProductsUpdateOneWithoutProductImagesNestedInput = {
@@ -13985,14 +14292,6 @@ export namespace Prisma {
     delete?: ProductsWhereInput | boolean
     connect?: ProductsWhereUniqueInput
     update?: XOR<XOR<ProductsUpdateToOneWithWhereWithoutProductImagesInput, ProductsUpdateWithoutProductImagesInput>, ProductsUncheckedUpdateWithoutProductImagesInput>
-  }
-
-  export type RestaurantsUpdateOneRequiredWithoutProductImagesNestedInput = {
-    create?: XOR<RestaurantsCreateWithoutProductImagesInput, RestaurantsUncheckedCreateWithoutProductImagesInput>
-    connectOrCreate?: RestaurantsCreateOrConnectWithoutProductImagesInput
-    upsert?: RestaurantsUpsertWithoutProductImagesInput
-    connect?: RestaurantsWhereUniqueInput
-    update?: XOR<XOR<RestaurantsUpdateToOneWithWhereWithoutProductImagesInput, RestaurantsUpdateWithoutProductImagesInput>, RestaurantsUncheckedUpdateWithoutProductImagesInput>
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
@@ -14103,6 +14402,28 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -14155,7 +14476,7 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[]
     notIn?: Date[] | string[]
@@ -14163,7 +14484,35 @@ export namespace Prisma {
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
   export type NestedJsonFilter<$PrismaModel = never> = 
     | PatchUndefined<
@@ -14188,20 +14537,6 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type NestedEnumStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
     in?: $Enums.Status[]
@@ -14217,17 +14552,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStatusFilter<$PrismaModel>
     _max?: NestedEnumStatusFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -14259,8 +14583,9 @@ export namespace Prisma {
 
   export type CategoriesCreateWithoutRestaurantInput = {
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     Products?: ProductsCreateNestedManyWithoutCategoriesInput
@@ -14269,8 +14594,9 @@ export namespace Prisma {
   export type CategoriesUncheckedCreateWithoutRestaurantInput = {
     Id?: number
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     Products?: ProductsUncheckedCreateNestedManyWithoutCategoriesInput
@@ -14288,8 +14614,9 @@ export namespace Prisma {
 
   export type OrderCreateWithoutRestaurantInput = {
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -14301,8 +14628,9 @@ export namespace Prisma {
   export type OrderUncheckedCreateWithoutRestaurantInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -14325,8 +14653,9 @@ export namespace Prisma {
     Name: string
     ImagePath: string
     Size: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Products?: ProductsCreateNestedOneWithoutProductImagesInput
   }
@@ -14336,10 +14665,11 @@ export namespace Prisma {
     Name: string
     ImagePath: string
     Size: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
-    ProductId?: number | null
+    productsId?: number | null
   }
 
   export type ProductImagesCreateOrConnectWithoutRestaurantInput = {
@@ -14356,8 +14686,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     ProductImages?: ProductImagesCreateNestedManyWithoutProductsInput
@@ -14370,8 +14701,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     CategoryId: number
     Status?: boolean
     Active?: boolean
@@ -14392,8 +14724,10 @@ export namespace Prisma {
   export type TableCreateWithoutRestaurantInput = {
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Order?: OrderCreateNestedManyWithoutTableInput
   }
@@ -14402,8 +14736,10 @@ export namespace Prisma {
     Id?: number
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Order?: OrderUncheckedCreateNestedManyWithoutTableInput
   }
@@ -14421,8 +14757,9 @@ export namespace Prisma {
   export type VariationsCreateWithoutRestaurantInput = {
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     OrderProduct?: ProductOrderCreateNestedManyWithoutVariationInput
     Products: ProductsCreateNestedOneWithoutVariationsInput
@@ -14432,8 +14769,9 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     ProductId: number
     Active?: boolean
     OrderProduct?: ProductOrderUncheckedCreateNestedManyWithoutVariationInput
@@ -14471,8 +14809,9 @@ export namespace Prisma {
     NOT?: CategoriesScalarWhereInput | CategoriesScalarWhereInput[]
     Id?: IntFilter<"Categories"> | number
     Name?: StringFilter<"Categories"> | string
-    CreatedTime?: DateTimeFilter<"Categories"> | Date | string
-    UpdateTime?: DateTimeFilter<"Categories"> | Date | string
+    CreatedAt?: DateTimeFilter<"Categories"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Categories"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Categories"> | Date | string | null
     RestaurantId?: IntFilter<"Categories"> | number
     Status?: BoolFilter<"Categories"> | boolean
     Active?: BoolFilter<"Categories"> | boolean
@@ -14500,8 +14839,9 @@ export namespace Prisma {
     NOT?: OrderScalarWhereInput | OrderScalarWhereInput[]
     Id?: IntFilter<"Order"> | number
     Status?: EnumStatusFilter<"Order"> | $Enums.Status
-    CreatedTime?: DateTimeFilter<"Order"> | Date | string
-    UpdateTime?: DateTimeFilter<"Order"> | Date | string
+    CreatedAt?: DateTimeFilter<"Order"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Order"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Order"> | Date | string | null
     Paid?: BoolFilter<"Order"> | boolean
     Active?: BoolFilter<"Order"> | boolean
     UserId?: IntFilter<"Order"> | number
@@ -14534,10 +14874,11 @@ export namespace Prisma {
     ImagePath?: StringFilter<"ProductImages"> | string
     Size?: IntFilter<"ProductImages"> | number
     RestaurantId?: IntFilter<"ProductImages"> | number
-    CreatedTime?: DateTimeFilter<"ProductImages"> | Date | string
-    UpdateTime?: DateTimeFilter<"ProductImages"> | Date | string
+    CreatedAt?: DateTimeFilter<"ProductImages"> | Date | string
+    UpdatedAt?: DateTimeFilter<"ProductImages"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"ProductImages"> | Date | string | null
     Active?: BoolFilter<"ProductImages"> | boolean
-    ProductId?: IntNullableFilter<"ProductImages"> | number | null
+    productsId?: IntNullableFilter<"ProductImages"> | number | null
   }
 
   export type ProductsUpsertWithWhereUniqueWithoutRestaurantInput = {
@@ -14564,8 +14905,9 @@ export namespace Prisma {
     Name?: StringFilter<"Products"> | string
     Description?: StringFilter<"Products"> | string
     ImgUrl?: JsonFilter<"Products">
-    CreatedTime?: DateTimeFilter<"Products"> | Date | string
-    UpdateTime?: DateTimeFilter<"Products"> | Date | string
+    CreatedAt?: DateTimeFilter<"Products"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Products"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Products"> | Date | string | null
     RestaurantId?: IntFilter<"Products"> | number
     CategoryId?: IntFilter<"Products"> | number
     Status?: BoolFilter<"Products"> | boolean
@@ -14595,8 +14937,10 @@ export namespace Prisma {
     Id?: IntFilter<"Table"> | number
     Status?: BoolFilter<"Table"> | boolean
     Number?: IntFilter<"Table"> | number
-    CreatedTime?: DateTimeFilter<"Table"> | Date | string
-    UpdateTime?: DateTimeFilter<"Table"> | Date | string
+    Barcode?: StringFilter<"Table"> | string
+    CreatedAt?: DateTimeFilter<"Table"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Table"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Table"> | Date | string | null
     Active?: BoolFilter<"Table"> | boolean
     RestaurantId?: IntFilter<"Table"> | number
   }
@@ -14624,8 +14968,9 @@ export namespace Prisma {
     Id?: IntFilter<"Variations"> | number
     Name?: StringFilter<"Variations"> | string
     Value?: StringFilter<"Variations"> | string
-    CreatedTime?: DateTimeFilter<"Variations"> | Date | string
-    UpdateTime?: DateTimeFilter<"Variations"> | Date | string
+    CreatedAt?: DateTimeFilter<"Variations"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Variations"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"Variations"> | Date | string | null
     ProductId?: IntFilter<"Variations"> | number
     RestaurantId?: IntFilter<"Variations"> | number
     Active?: BoolFilter<"Variations"> | boolean
@@ -14635,8 +14980,9 @@ export namespace Prisma {
     Name: string
     ImagePath: string
     Size: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Restaurant: RestaurantsCreateNestedOneWithoutProductImagesInput
   }
@@ -14647,8 +14993,9 @@ export namespace Prisma {
     ImagePath: string
     Size: number
     RestaurantId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
   }
 
@@ -14664,8 +15011,9 @@ export namespace Prisma {
 
   export type CategoriesCreateWithoutProductsInput = {
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     Restaurant: RestaurantsCreateNestedOneWithoutCategoriesInput
@@ -14674,8 +15022,9 @@ export namespace Prisma {
   export type CategoriesUncheckedCreateWithoutProductsInput = {
     Id?: number
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Status?: boolean
     Active?: boolean
@@ -14690,6 +15039,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesCreateNestedManyWithoutRestaurantInput
     Order?: OrderCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesCreateNestedManyWithoutRestaurantInput
@@ -14702,6 +15054,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesUncheckedCreateNestedManyWithoutRestaurantInput
     Order?: OrderUncheckedCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesUncheckedCreateNestedManyWithoutRestaurantInput
@@ -14717,8 +15072,9 @@ export namespace Prisma {
   export type VariationsCreateWithoutProductsInput = {
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     OrderProduct?: ProductOrderCreateNestedManyWithoutVariationInput
     Restaurant: RestaurantsCreateNestedOneWithoutVariationsInput
@@ -14728,8 +15084,9 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Active?: boolean
     OrderProduct?: ProductOrderUncheckedCreateNestedManyWithoutVariationInput
@@ -14774,8 +15131,9 @@ export namespace Prisma {
 
   export type CategoriesUpdateWithoutProductsInput = {
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     Restaurant?: RestaurantsUpdateOneRequiredWithoutCategoriesNestedInput
@@ -14784,8 +15142,9 @@ export namespace Prisma {
   export type CategoriesUncheckedUpdateWithoutProductsInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -14806,6 +15165,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUpdateManyWithoutRestaurantNestedInput
@@ -14818,6 +15180,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUncheckedUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUncheckedUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -14843,8 +15208,8 @@ export namespace Prisma {
 
   export type ProductOrderCreateWithoutVariationInput = {
     Quantity: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     Order: OrderCreateNestedOneWithoutOrderProductsInput
   }
 
@@ -14852,8 +15217,8 @@ export namespace Prisma {
     Id?: number
     Quantity: number
     OrderId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type ProductOrderCreateOrConnectWithoutVariationInput = {
@@ -14870,8 +15235,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     ProductImages?: ProductImagesCreateNestedManyWithoutProductsInput
@@ -14884,8 +15250,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     CategoryId: number
     Status?: boolean
@@ -14902,6 +15269,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesCreateNestedManyWithoutRestaurantInput
     Order?: OrderCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesCreateNestedManyWithoutRestaurantInput
@@ -14914,6 +15284,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesUncheckedCreateNestedManyWithoutRestaurantInput
     Order?: OrderUncheckedCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesUncheckedCreateNestedManyWithoutRestaurantInput
@@ -14949,8 +15322,8 @@ export namespace Prisma {
     Id?: IntFilter<"ProductOrder"> | number
     Quantity?: IntFilter<"ProductOrder"> | number
     OrderId?: IntFilter<"ProductOrder"> | number
-    CreatedTime?: DateTimeFilter<"ProductOrder"> | Date | string
-    UpdateTime?: DateTimeFilter<"ProductOrder"> | Date | string
+    CreatedAt?: DateTimeFilter<"ProductOrder"> | Date | string
+    UpdatedAt?: DateTimeFilter<"ProductOrder"> | Date | string
     VariationId?: IntFilter<"ProductOrder"> | number
   }
 
@@ -14969,8 +15342,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     ProductImages?: ProductImagesUpdateManyWithoutProductsNestedInput
@@ -14983,8 +15357,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     CategoryId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
@@ -15007,6 +15382,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUpdateManyWithoutRestaurantNestedInput
@@ -15019,6 +15397,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUncheckedUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUncheckedUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -15030,6 +15411,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Order?: OrderCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesCreateNestedManyWithoutRestaurantInput
     Products?: ProductsCreateNestedManyWithoutRestaurantInput
@@ -15042,6 +15426,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Order?: OrderUncheckedCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesUncheckedCreateNestedManyWithoutRestaurantInput
     Products?: ProductsUncheckedCreateNestedManyWithoutRestaurantInput
@@ -15058,8 +15445,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
     ProductImages?: ProductImagesCreateNestedManyWithoutProductsInput
@@ -15072,8 +15460,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Status?: boolean
     Active?: boolean
@@ -15106,6 +15495,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Order?: OrderUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUpdateManyWithoutRestaurantNestedInput
     Products?: ProductsUpdateManyWithoutRestaurantNestedInput
@@ -15118,6 +15510,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Order?: OrderUncheckedUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUncheckedUpdateManyWithoutRestaurantNestedInput
     Products?: ProductsUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -15145,6 +15540,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesCreateNestedManyWithoutRestaurantInput
     Products?: ProductsCreateNestedManyWithoutRestaurantInput
@@ -15157,6 +15555,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesUncheckedCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesUncheckedCreateNestedManyWithoutRestaurantInput
     Products?: ProductsUncheckedCreateNestedManyWithoutRestaurantInput
@@ -15172,8 +15573,10 @@ export namespace Prisma {
   export type TableCreateWithoutOrderInput = {
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Restaurant: RestaurantsCreateNestedOneWithoutTableInput
   }
@@ -15182,8 +15585,10 @@ export namespace Prisma {
     Id?: number
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     RestaurantId: number
   }
@@ -15196,16 +15601,16 @@ export namespace Prisma {
   export type PaymentsCreateWithoutOrderInput = {
     Amount: number
     PaymentType: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type PaymentsUncheckedCreateWithoutOrderInput = {
     Id?: number
     Amount: number
     PaymentType: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type PaymentsCreateOrConnectWithoutOrderInput = {
@@ -15220,16 +15625,16 @@ export namespace Prisma {
 
   export type ProductOrderCreateWithoutOrderInput = {
     Quantity: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     Variation: VariationsCreateNestedOneWithoutOrderProductInput
   }
 
   export type ProductOrderUncheckedCreateWithoutOrderInput = {
     Id?: number
     Quantity: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     VariationId: number
   }
 
@@ -15258,6 +15663,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUpdateManyWithoutRestaurantNestedInput
     Products?: ProductsUpdateManyWithoutRestaurantNestedInput
@@ -15270,6 +15678,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUncheckedUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUncheckedUpdateManyWithoutRestaurantNestedInput
     Products?: ProductsUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -15291,8 +15702,10 @@ export namespace Prisma {
   export type TableUpdateWithoutOrderInput = {
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Restaurant?: RestaurantsUpdateOneRequiredWithoutTableNestedInput
   }
@@ -15301,8 +15714,10 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     RestaurantId?: IntFieldUpdateOperationsInput | number
   }
@@ -15331,8 +15746,8 @@ export namespace Prisma {
     OrderId?: IntFilter<"Payments"> | number
     Amount?: IntFilter<"Payments"> | number
     PaymentType?: StringFilter<"Payments"> | string
-    CreatedTime?: DateTimeFilter<"Payments"> | Date | string
-    UpdateTime?: DateTimeFilter<"Payments"> | Date | string
+    CreatedAt?: DateTimeFilter<"Payments"> | Date | string
+    UpdatedAt?: DateTimeFilter<"Payments"> | Date | string
   }
 
   export type ProductOrderUpsertWithWhereUniqueWithoutOrderInput = {
@@ -15353,8 +15768,9 @@ export namespace Prisma {
 
   export type OrderCreateWithoutOrderProductsInput = {
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15366,8 +15782,9 @@ export namespace Prisma {
   export type OrderUncheckedCreateWithoutOrderProductsInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15384,8 +15801,9 @@ export namespace Prisma {
   export type VariationsCreateWithoutOrderProductInput = {
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
     Products: ProductsCreateNestedOneWithoutVariationsInput
     Restaurant: RestaurantsCreateNestedOneWithoutVariationsInput
@@ -15395,8 +15813,9 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     ProductId: number
     RestaurantId: number
     Active?: boolean
@@ -15420,8 +15839,9 @@ export namespace Prisma {
 
   export type OrderUpdateWithoutOrderProductsInput = {
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15433,8 +15853,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateWithoutOrderProductsInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15457,8 +15878,9 @@ export namespace Prisma {
   export type VariationsUpdateWithoutOrderProductInput = {
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Products?: ProductsUpdateOneRequiredWithoutVariationsNestedInput
     Restaurant?: RestaurantsUpdateOneRequiredWithoutVariationsNestedInput
@@ -15468,49 +15890,21 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ProductId?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type ProductsCreateWithoutProductImagesInput = {
-    Name: string
-    Description: string
-    ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
-    Status?: boolean
-    Active?: boolean
-    Categories: CategoriesCreateNestedOneWithoutProductsInput
-    Restaurant: RestaurantsCreateNestedOneWithoutProductsInput
-    Variations?: VariationsCreateNestedManyWithoutProductsInput
-  }
-
-  export type ProductsUncheckedCreateWithoutProductImagesInput = {
-    Id?: number
-    Name: string
-    Description: string
-    ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
-    RestaurantId: number
-    CategoryId: number
-    Status?: boolean
-    Active?: boolean
-    Variations?: VariationsUncheckedCreateNestedManyWithoutProductsInput
-  }
-
-  export type ProductsCreateOrConnectWithoutProductImagesInput = {
-    where: ProductsWhereUniqueInput
-    create: XOR<ProductsCreateWithoutProductImagesInput, ProductsUncheckedCreateWithoutProductImagesInput>
   }
 
   export type RestaurantsCreateWithoutProductImagesInput = {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesCreateNestedManyWithoutRestaurantInput
     Order?: OrderCreateNestedManyWithoutRestaurantInput
     Products?: ProductsCreateNestedManyWithoutRestaurantInput
@@ -15523,6 +15917,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesUncheckedCreateNestedManyWithoutRestaurantInput
     Order?: OrderUncheckedCreateNestedManyWithoutRestaurantInput
     Products?: ProductsUncheckedCreateNestedManyWithoutRestaurantInput
@@ -15535,42 +15932,38 @@ export namespace Prisma {
     create: XOR<RestaurantsCreateWithoutProductImagesInput, RestaurantsUncheckedCreateWithoutProductImagesInput>
   }
 
-  export type ProductsUpsertWithoutProductImagesInput = {
-    update: XOR<ProductsUpdateWithoutProductImagesInput, ProductsUncheckedUpdateWithoutProductImagesInput>
+  export type ProductsCreateWithoutProductImagesInput = {
+    Name: string
+    Description: string
+    ImgUrl: JsonNullValueInput | InputJsonValue
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
+    Status?: boolean
+    Active?: boolean
+    Categories: CategoriesCreateNestedOneWithoutProductsInput
+    Restaurant: RestaurantsCreateNestedOneWithoutProductsInput
+    Variations?: VariationsCreateNestedManyWithoutProductsInput
+  }
+
+  export type ProductsUncheckedCreateWithoutProductImagesInput = {
+    Id?: number
+    Name: string
+    Description: string
+    ImgUrl: JsonNullValueInput | InputJsonValue
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
+    RestaurantId: number
+    CategoryId: number
+    Status?: boolean
+    Active?: boolean
+    Variations?: VariationsUncheckedCreateNestedManyWithoutProductsInput
+  }
+
+  export type ProductsCreateOrConnectWithoutProductImagesInput = {
+    where: ProductsWhereUniqueInput
     create: XOR<ProductsCreateWithoutProductImagesInput, ProductsUncheckedCreateWithoutProductImagesInput>
-    where?: ProductsWhereInput
-  }
-
-  export type ProductsUpdateToOneWithWhereWithoutProductImagesInput = {
-    where?: ProductsWhereInput
-    data: XOR<ProductsUpdateWithoutProductImagesInput, ProductsUncheckedUpdateWithoutProductImagesInput>
-  }
-
-  export type ProductsUpdateWithoutProductImagesInput = {
-    Name?: StringFieldUpdateOperationsInput | string
-    Description?: StringFieldUpdateOperationsInput | string
-    ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    Status?: BoolFieldUpdateOperationsInput | boolean
-    Active?: BoolFieldUpdateOperationsInput | boolean
-    Categories?: CategoriesUpdateOneRequiredWithoutProductsNestedInput
-    Restaurant?: RestaurantsUpdateOneRequiredWithoutProductsNestedInput
-    Variations?: VariationsUpdateManyWithoutProductsNestedInput
-  }
-
-  export type ProductsUncheckedUpdateWithoutProductImagesInput = {
-    Id?: IntFieldUpdateOperationsInput | number
-    Name?: StringFieldUpdateOperationsInput | string
-    Description?: StringFieldUpdateOperationsInput | string
-    ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    RestaurantId?: IntFieldUpdateOperationsInput | number
-    CategoryId?: IntFieldUpdateOperationsInput | number
-    Status?: BoolFieldUpdateOperationsInput | boolean
-    Active?: BoolFieldUpdateOperationsInput | boolean
-    Variations?: VariationsUncheckedUpdateManyWithoutProductsNestedInput
   }
 
   export type RestaurantsUpsertWithoutProductImagesInput = {
@@ -15588,6 +15981,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUpdateManyWithoutRestaurantNestedInput
     Products?: ProductsUpdateManyWithoutRestaurantNestedInput
@@ -15600,6 +15996,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUncheckedUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUncheckedUpdateManyWithoutRestaurantNestedInput
     Products?: ProductsUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -15607,10 +16006,51 @@ export namespace Prisma {
     Variations?: VariationsUncheckedUpdateManyWithoutRestaurantNestedInput
   }
 
+  export type ProductsUpsertWithoutProductImagesInput = {
+    update: XOR<ProductsUpdateWithoutProductImagesInput, ProductsUncheckedUpdateWithoutProductImagesInput>
+    create: XOR<ProductsCreateWithoutProductImagesInput, ProductsUncheckedCreateWithoutProductImagesInput>
+    where?: ProductsWhereInput
+  }
+
+  export type ProductsUpdateToOneWithWhereWithoutProductImagesInput = {
+    where?: ProductsWhereInput
+    data: XOR<ProductsUpdateWithoutProductImagesInput, ProductsUncheckedUpdateWithoutProductImagesInput>
+  }
+
+  export type ProductsUpdateWithoutProductImagesInput = {
+    Name?: StringFieldUpdateOperationsInput | string
+    Description?: StringFieldUpdateOperationsInput | string
+    ImgUrl?: JsonNullValueInput | InputJsonValue
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Status?: BoolFieldUpdateOperationsInput | boolean
+    Active?: BoolFieldUpdateOperationsInput | boolean
+    Categories?: CategoriesUpdateOneRequiredWithoutProductsNestedInput
+    Restaurant?: RestaurantsUpdateOneRequiredWithoutProductsNestedInput
+    Variations?: VariationsUpdateManyWithoutProductsNestedInput
+  }
+
+  export type ProductsUncheckedUpdateWithoutProductImagesInput = {
+    Id?: IntFieldUpdateOperationsInput | number
+    Name?: StringFieldUpdateOperationsInput | string
+    Description?: StringFieldUpdateOperationsInput | string
+    ImgUrl?: JsonNullValueInput | InputJsonValue
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    RestaurantId?: IntFieldUpdateOperationsInput | number
+    CategoryId?: IntFieldUpdateOperationsInput | number
+    Status?: BoolFieldUpdateOperationsInput | boolean
+    Active?: BoolFieldUpdateOperationsInput | boolean
+    Variations?: VariationsUncheckedUpdateManyWithoutProductsNestedInput
+  }
+
   export type OrderCreateWithoutTableInput = {
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15622,8 +16062,9 @@ export namespace Prisma {
   export type OrderUncheckedCreateWithoutTableInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15646,6 +16087,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesCreateNestedManyWithoutRestaurantInput
     Order?: OrderCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesCreateNestedManyWithoutRestaurantInput
@@ -15658,6 +16102,9 @@ export namespace Prisma {
     Name: string
     RestaurantId: number
     Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Categories?: CategoriesUncheckedCreateNestedManyWithoutRestaurantInput
     Order?: OrderUncheckedCreateNestedManyWithoutRestaurantInput
     ProductImages?: ProductImagesUncheckedCreateNestedManyWithoutRestaurantInput
@@ -15701,6 +16148,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUpdateManyWithoutRestaurantNestedInput
@@ -15713,6 +16163,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Categories?: CategoriesUncheckedUpdateManyWithoutRestaurantNestedInput
     Order?: OrderUncheckedUpdateManyWithoutRestaurantNestedInput
     ProductImages?: ProductImagesUncheckedUpdateManyWithoutRestaurantNestedInput
@@ -15722,8 +16175,9 @@ export namespace Prisma {
 
   export type OrderCreateWithoutPaymentsInput = {
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15735,8 +16189,9 @@ export namespace Prisma {
   export type OrderUncheckedCreateWithoutPaymentsInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15763,8 +16218,9 @@ export namespace Prisma {
 
   export type OrderUpdateWithoutPaymentsInput = {
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15776,8 +16232,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateWithoutPaymentsInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15789,8 +16246,9 @@ export namespace Prisma {
   export type CategoriesCreateManyRestaurantInput = {
     Id?: number
     Name: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Status?: boolean
     Active?: boolean
   }
@@ -15798,8 +16256,9 @@ export namespace Prisma {
   export type OrderCreateManyRestaurantInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -15811,10 +16270,11 @@ export namespace Prisma {
     Name: string
     ImagePath: string
     Size: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
-    ProductId?: number | null
+    productsId?: number | null
   }
 
   export type ProductsCreateManyRestaurantInput = {
@@ -15822,8 +16282,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     CategoryId: number
     Status?: boolean
     Active?: boolean
@@ -15833,8 +16294,10 @@ export namespace Prisma {
     Id?: number
     Status?: boolean
     Number: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Barcode: string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
   }
 
@@ -15842,16 +16305,18 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     ProductId: number
     Active?: boolean
   }
 
   export type CategoriesUpdateWithoutRestaurantInput = {
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     Products?: ProductsUpdateManyWithoutCategoriesNestedInput
@@ -15860,8 +16325,9 @@ export namespace Prisma {
   export type CategoriesUncheckedUpdateWithoutRestaurantInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     Products?: ProductsUncheckedUpdateManyWithoutCategoriesNestedInput
@@ -15870,16 +16336,18 @@ export namespace Prisma {
   export type CategoriesUncheckedUpdateManyWithoutRestaurantInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type OrderUpdateWithoutRestaurantInput = {
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15891,8 +16359,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateWithoutRestaurantInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15904,8 +16373,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateManyWithoutRestaurantInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -15916,8 +16386,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Products?: ProductsUpdateOneWithoutProductImagesNestedInput
   }
@@ -15927,10 +16398,11 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
-    ProductId?: NullableIntFieldUpdateOperationsInput | number | null
+    productsId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type ProductImagesUncheckedUpdateManyWithoutRestaurantInput = {
@@ -15938,18 +16410,20 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
-    ProductId?: NullableIntFieldUpdateOperationsInput | number | null
+    productsId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type ProductsUpdateWithoutRestaurantInput = {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     ProductImages?: ProductImagesUpdateManyWithoutProductsNestedInput
@@ -15962,8 +16436,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     CategoryId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -15976,8 +16451,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     CategoryId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -15986,8 +16462,10 @@ export namespace Prisma {
   export type TableUpdateWithoutRestaurantInput = {
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Order?: OrderUpdateManyWithoutTableNestedInput
   }
@@ -15996,8 +16474,10 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Order?: OrderUncheckedUpdateManyWithoutTableNestedInput
   }
@@ -16006,16 +16486,19 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Number?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Barcode?: StringFieldUpdateOperationsInput | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type VariationsUpdateWithoutRestaurantInput = {
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     OrderProduct?: ProductOrderUpdateManyWithoutVariationNestedInput
     Products?: ProductsUpdateOneRequiredWithoutVariationsNestedInput
@@ -16025,8 +16508,9 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ProductId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
     OrderProduct?: ProductOrderUncheckedUpdateManyWithoutVariationNestedInput
@@ -16036,8 +16520,9 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ProductId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -16048,8 +16533,9 @@ export namespace Prisma {
     ImagePath: string
     Size: number
     RestaurantId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Active?: boolean
   }
 
@@ -16057,8 +16543,9 @@ export namespace Prisma {
     Id?: number
     Name: string
     Value: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Active?: boolean
   }
@@ -16067,8 +16554,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     Restaurant?: RestaurantsUpdateOneRequiredWithoutProductImagesNestedInput
   }
@@ -16079,8 +16567,9 @@ export namespace Prisma {
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
@@ -16090,16 +16579,18 @@ export namespace Prisma {
     ImagePath?: StringFieldUpdateOperationsInput | string
     Size?: IntFieldUpdateOperationsInput | number
     RestaurantId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type VariationsUpdateWithoutProductsInput = {
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Active?: BoolFieldUpdateOperationsInput | boolean
     OrderProduct?: ProductOrderUpdateManyWithoutVariationNestedInput
     Restaurant?: RestaurantsUpdateOneRequiredWithoutVariationsNestedInput
@@ -16109,8 +16600,9 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
     OrderProduct?: ProductOrderUncheckedUpdateManyWithoutVariationNestedInput
@@ -16120,8 +16612,9 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
     Value?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Active?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -16130,14 +16623,14 @@ export namespace Prisma {
     Id?: number
     Quantity: number
     OrderId: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type ProductOrderUpdateWithoutVariationInput = {
     Quantity?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     Order?: OrderUpdateOneRequiredWithoutOrderProductsNestedInput
   }
 
@@ -16145,16 +16638,16 @@ export namespace Prisma {
     Id?: IntFieldUpdateOperationsInput | number
     Quantity?: IntFieldUpdateOperationsInput | number
     OrderId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductOrderUncheckedUpdateManyWithoutVariationInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Quantity?: IntFieldUpdateOperationsInput | number
     OrderId?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductsCreateManyCategoriesInput = {
@@ -16162,8 +16655,9 @@ export namespace Prisma {
     Name: string
     Description: string
     ImgUrl: JsonNullValueInput | InputJsonValue
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     RestaurantId: number
     Status?: boolean
     Active?: boolean
@@ -16173,8 +16667,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     ProductImages?: ProductImagesUpdateManyWithoutProductsNestedInput
@@ -16187,8 +16682,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -16201,8 +16697,9 @@ export namespace Prisma {
     Name?: StringFieldUpdateOperationsInput | string
     Description?: StringFieldUpdateOperationsInput | string
     ImgUrl?: JsonNullValueInput | InputJsonValue
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     RestaurantId?: IntFieldUpdateOperationsInput | number
     Status?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
@@ -16212,69 +16709,70 @@ export namespace Prisma {
     Id?: number
     Amount: number
     PaymentType: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
   }
 
   export type ProductOrderCreateManyOrderInput = {
     Id?: number
     Quantity: number
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
     VariationId: number
   }
 
   export type PaymentsUpdateWithoutOrderInput = {
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PaymentsUncheckedUpdateWithoutOrderInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type PaymentsUncheckedUpdateManyWithoutOrderInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Amount?: IntFieldUpdateOperationsInput | number
     PaymentType?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProductOrderUpdateWithoutOrderInput = {
     Quantity?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     Variation?: VariationsUpdateOneRequiredWithoutOrderProductNestedInput
   }
 
   export type ProductOrderUncheckedUpdateWithoutOrderInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Quantity?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     VariationId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProductOrderUncheckedUpdateManyWithoutOrderInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Quantity?: IntFieldUpdateOperationsInput | number
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     VariationId?: IntFieldUpdateOperationsInput | number
   }
 
   export type OrderCreateManyTableInput = {
     Id?: number
     Status?: $Enums.Status
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
     Paid?: boolean
     Active?: boolean
     UserId: number
@@ -16283,8 +16781,9 @@ export namespace Prisma {
 
   export type OrderUpdateWithoutTableInput = {
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -16296,8 +16795,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateWithoutTableInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number
@@ -16309,8 +16809,9 @@ export namespace Prisma {
   export type OrderUncheckedUpdateManyWithoutTableInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     Paid?: BoolFieldUpdateOperationsInput | boolean
     Active?: BoolFieldUpdateOperationsInput | boolean
     UserId?: IntFieldUpdateOperationsInput | number

@@ -111,7 +111,10 @@ exports.Prisma.RestaurantsScalarFieldEnum = {
   Id: 'Id',
   Name: 'Name',
   RestaurantId: 'RestaurantId',
-  Active: 'Active'
+  Active: 'Active',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt'
 };
 
 exports.Prisma.ProductsScalarFieldEnum = {
@@ -119,8 +122,9 @@ exports.Prisma.ProductsScalarFieldEnum = {
   Name: 'Name',
   Description: 'Description',
   ImgUrl: 'ImgUrl',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt',
   RestaurantId: 'RestaurantId',
   CategoryId: 'CategoryId',
   Status: 'Status',
@@ -131,8 +135,9 @@ exports.Prisma.VariationsScalarFieldEnum = {
   Id: 'Id',
   Name: 'Name',
   Value: 'Value',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt',
   ProductId: 'ProductId',
   RestaurantId: 'RestaurantId',
   Active: 'Active'
@@ -141,8 +146,9 @@ exports.Prisma.VariationsScalarFieldEnum = {
 exports.Prisma.CategoriesScalarFieldEnum = {
   Id: 'Id',
   Name: 'Name',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt',
   RestaurantId: 'RestaurantId',
   Status: 'Status',
   Active: 'Active'
@@ -151,8 +157,9 @@ exports.Prisma.CategoriesScalarFieldEnum = {
 exports.Prisma.OrderScalarFieldEnum = {
   Id: 'Id',
   Status: 'Status',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt',
   Paid: 'Paid',
   Active: 'Active',
   UserId: 'UserId',
@@ -164,8 +171,8 @@ exports.Prisma.ProductOrderScalarFieldEnum = {
   Id: 'Id',
   Quantity: 'Quantity',
   OrderId: 'OrderId',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
   VariationId: 'VariationId'
 };
 
@@ -175,18 +182,21 @@ exports.Prisma.ProductImagesScalarFieldEnum = {
   ImagePath: 'ImagePath',
   Size: 'Size',
   RestaurantId: 'RestaurantId',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt',
   Active: 'Active',
-  ProductId: 'ProductId'
+  productsId: 'productsId'
 };
 
 exports.Prisma.TableScalarFieldEnum = {
   Id: 'Id',
   Status: 'Status',
   Number: 'Number',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime',
+  Barcode: 'Barcode',
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt',
+  DeletedAt: 'DeletedAt',
   Active: 'Active',
   RestaurantId: 'RestaurantId'
 };
@@ -196,8 +206,8 @@ exports.Prisma.PaymentsScalarFieldEnum = {
   OrderId: 'OrderId',
   Amount: 'Amount',
   PaymentType: 'PaymentType',
-  CreatedTime: 'CreatedTime',
-  UpdateTime: 'UpdateTime'
+  CreatedAt: 'CreatedAt',
+  UpdatedAt: 'UpdatedAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -209,15 +219,15 @@ exports.Prisma.JsonNullValueInput = {
   JsonNull: Prisma.JsonNull
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 exports.Prisma.JsonNullValueFilter = {
   DbNull: Prisma.DbNull,
   JsonNull: Prisma.JsonNull,
   AnyNull: Prisma.AnyNull
-};
-
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
 };
 exports.Status = exports.$Enums.Status = {
   WAITING: 'WAITING',

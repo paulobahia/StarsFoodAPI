@@ -881,40 +881,49 @@ export namespace Prisma {
   export type UserMinAggregateOutputType = {
     Id: number | null
     Name: string | null
+    ImgPath: string | null
     Email: string | null
     Password: string | null
     BirthDate: Date | null
     Gender: string | null
-    RestaurantId: number | null
     Role: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    Active: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
+    RestaurantId: number | null
   }
 
   export type UserMaxAggregateOutputType = {
     Id: number | null
     Name: string | null
+    ImgPath: string | null
     Email: string | null
     Password: string | null
     BirthDate: Date | null
     Gender: string | null
-    RestaurantId: number | null
     Role: string | null
-    CreatedTime: Date | null
-    UpdateTime: Date | null
+    Active: boolean | null
+    CreatedAt: Date | null
+    UpdatedAt: Date | null
+    DeletedAt: Date | null
+    RestaurantId: number | null
   }
 
   export type UserCountAggregateOutputType = {
     Id: number
     Name: number
+    ImgPath: number
     Email: number
     Password: number
     BirthDate: number
     Gender: number
-    RestaurantId: number
     Role: number
-    CreatedTime: number
-    UpdateTime: number
+    Active: number
+    CreatedAt: number
+    UpdatedAt: number
+    DeletedAt: number
+    RestaurantId: number
     _all: number
   }
 
@@ -932,40 +941,49 @@ export namespace Prisma {
   export type UserMinAggregateInputType = {
     Id?: true
     Name?: true
+    ImgPath?: true
     Email?: true
     Password?: true
     BirthDate?: true
     Gender?: true
-    RestaurantId?: true
     Role?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    Active?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
+    RestaurantId?: true
   }
 
   export type UserMaxAggregateInputType = {
     Id?: true
     Name?: true
+    ImgPath?: true
     Email?: true
     Password?: true
     BirthDate?: true
     Gender?: true
-    RestaurantId?: true
     Role?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    Active?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
+    RestaurantId?: true
   }
 
   export type UserCountAggregateInputType = {
     Id?: true
     Name?: true
+    ImgPath?: true
     Email?: true
     Password?: true
     BirthDate?: true
     Gender?: true
-    RestaurantId?: true
     Role?: true
-    CreatedTime?: true
-    UpdateTime?: true
+    Active?: true
+    CreatedAt?: true
+    UpdatedAt?: true
+    DeletedAt?: true
+    RestaurantId?: true
     _all?: true
   }
 
@@ -1058,14 +1076,17 @@ export namespace Prisma {
   export type UserGroupByOutputType = {
     Id: number
     Name: string
+    ImgPath: string
     Email: string
     Password: string
     BirthDate: Date
     Gender: string
-    RestaurantId: number
     Role: string
-    CreatedTime: Date
-    UpdateTime: Date
+    Active: boolean
+    CreatedAt: Date
+    UpdatedAt: Date
+    DeletedAt: Date | null
+    RestaurantId: number
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1090,27 +1111,33 @@ export namespace Prisma {
   export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     Id?: boolean
     Name?: boolean
+    ImgPath?: boolean
     Email?: boolean
     Password?: boolean
     BirthDate?: boolean
     Gender?: boolean
-    RestaurantId?: boolean
     Role?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    Active?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
+    RestaurantId?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     Id?: boolean
     Name?: boolean
+    ImgPath?: boolean
     Email?: boolean
     Password?: boolean
     BirthDate?: boolean
     Gender?: boolean
-    RestaurantId?: boolean
     Role?: boolean
-    CreatedTime?: boolean
-    UpdateTime?: boolean
+    Active?: boolean
+    CreatedAt?: boolean
+    UpdatedAt?: boolean
+    DeletedAt?: boolean
+    RestaurantId?: boolean
   }
 
 
@@ -1120,14 +1147,17 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       Id: number
       Name: string
+      ImgPath: string
       Email: string
       Password: string
       BirthDate: Date
       Gender: string
-      RestaurantId: number
       Role: string
-      CreatedTime: Date
-      UpdateTime: Date
+      Active: boolean
+      CreatedAt: Date
+      UpdatedAt: Date
+      DeletedAt: Date | null
+      RestaurantId: number
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1524,14 +1554,17 @@ export namespace Prisma {
   interface UserFieldRefs {
     readonly Id: FieldRef<"User", 'Int'>
     readonly Name: FieldRef<"User", 'String'>
+    readonly ImgPath: FieldRef<"User", 'String'>
     readonly Email: FieldRef<"User", 'String'>
     readonly Password: FieldRef<"User", 'String'>
     readonly BirthDate: FieldRef<"User", 'DateTime'>
     readonly Gender: FieldRef<"User", 'String'>
-    readonly RestaurantId: FieldRef<"User", 'Int'>
     readonly Role: FieldRef<"User", 'String'>
-    readonly CreatedTime: FieldRef<"User", 'DateTime'>
-    readonly UpdateTime: FieldRef<"User", 'DateTime'>
+    readonly Active: FieldRef<"User", 'Boolean'>
+    readonly CreatedAt: FieldRef<"User", 'DateTime'>
+    readonly UpdatedAt: FieldRef<"User", 'DateTime'>
+    readonly DeletedAt: FieldRef<"User", 'DateTime'>
+    readonly RestaurantId: FieldRef<"User", 'Int'>
   }
     
 
@@ -1836,14 +1869,17 @@ export namespace Prisma {
   export const UserScalarFieldEnum: {
     Id: 'Id',
     Name: 'Name',
+    ImgPath: 'ImgPath',
     Email: 'Email',
     Password: 'Password',
     BirthDate: 'BirthDate',
     Gender: 'Gender',
-    RestaurantId: 'RestaurantId',
     Role: 'Role',
-    CreatedTime: 'CreatedTime',
-    UpdateTime: 'UpdateTime'
+    Active: 'Active',
+    CreatedAt: 'CreatedAt',
+    UpdatedAt: 'UpdatedAt',
+    DeletedAt: 'DeletedAt',
+    RestaurantId: 'RestaurantId'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -1855,6 +1891,14 @@ export namespace Prisma {
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -1884,6 +1928,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -1899,27 +1950,33 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     Id?: IntFilter<"User"> | number
     Name?: StringFilter<"User"> | string
+    ImgPath?: StringFilter<"User"> | string
     Email?: StringFilter<"User"> | string
     Password?: StringFilter<"User"> | string
     BirthDate?: DateTimeFilter<"User"> | Date | string
     Gender?: StringFilter<"User"> | string
-    RestaurantId?: IntFilter<"User"> | number
     Role?: StringFilter<"User"> | string
-    CreatedTime?: DateTimeFilter<"User"> | Date | string
-    UpdateTime?: DateTimeFilter<"User"> | Date | string
+    Active?: BoolFilter<"User"> | boolean
+    CreatedAt?: DateTimeFilter<"User"> | Date | string
+    UpdatedAt?: DateTimeFilter<"User"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"User"> | Date | string | null
+    RestaurantId?: IntFilter<"User"> | number
   }
 
   export type UserOrderByWithRelationInput = {
     Id?: SortOrder
     Name?: SortOrder
+    ImgPath?: SortOrder
     Email?: SortOrder
     Password?: SortOrder
     BirthDate?: SortOrder
     Gender?: SortOrder
-    RestaurantId?: SortOrder
     Role?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
+    RestaurantId?: SortOrder
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -1929,26 +1986,32 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     Name?: StringFilter<"User"> | string
+    ImgPath?: StringFilter<"User"> | string
     Password?: StringFilter<"User"> | string
     BirthDate?: DateTimeFilter<"User"> | Date | string
     Gender?: StringFilter<"User"> | string
-    RestaurantId?: IntFilter<"User"> | number
     Role?: StringFilter<"User"> | string
-    CreatedTime?: DateTimeFilter<"User"> | Date | string
-    UpdateTime?: DateTimeFilter<"User"> | Date | string
+    Active?: BoolFilter<"User"> | boolean
+    CreatedAt?: DateTimeFilter<"User"> | Date | string
+    UpdatedAt?: DateTimeFilter<"User"> | Date | string
+    DeletedAt?: DateTimeNullableFilter<"User"> | Date | string | null
+    RestaurantId?: IntFilter<"User"> | number
   }, "Id" | "Email">
 
   export type UserOrderByWithAggregationInput = {
     Id?: SortOrder
     Name?: SortOrder
+    ImgPath?: SortOrder
     Email?: SortOrder
     Password?: SortOrder
     BirthDate?: SortOrder
     Gender?: SortOrder
-    RestaurantId?: SortOrder
     Role?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrderInput | SortOrder
+    RestaurantId?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -1962,102 +2025,126 @@ export namespace Prisma {
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     Id?: IntWithAggregatesFilter<"User"> | number
     Name?: StringWithAggregatesFilter<"User"> | string
+    ImgPath?: StringWithAggregatesFilter<"User"> | string
     Email?: StringWithAggregatesFilter<"User"> | string
     Password?: StringWithAggregatesFilter<"User"> | string
     BirthDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
     Gender?: StringWithAggregatesFilter<"User"> | string
-    RestaurantId?: IntWithAggregatesFilter<"User"> | number
     Role?: StringWithAggregatesFilter<"User"> | string
-    CreatedTime?: DateTimeWithAggregatesFilter<"User"> | Date | string
-    UpdateTime?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    Active?: BoolWithAggregatesFilter<"User"> | boolean
+    CreatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    UpdatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    DeletedAt?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
+    RestaurantId?: IntWithAggregatesFilter<"User"> | number
   }
 
   export type UserCreateInput = {
     Name: string
+    ImgPath: string
     Email: string
     Password: string
     BirthDate: Date | string
     Gender: string
-    RestaurantId: number
     Role: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
+    RestaurantId: number
   }
 
   export type UserUncheckedCreateInput = {
     Id?: number
     Name: string
+    ImgPath: string
     Email: string
     Password: string
     BirthDate: Date | string
     Gender: string
-    RestaurantId: number
     Role: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
+    RestaurantId: number
   }
 
   export type UserUpdateInput = {
     Name?: StringFieldUpdateOperationsInput | string
+    ImgPath?: StringFieldUpdateOperationsInput | string
     Email?: StringFieldUpdateOperationsInput | string
     Password?: StringFieldUpdateOperationsInput | string
     BirthDate?: DateTimeFieldUpdateOperationsInput | Date | string
     Gender?: StringFieldUpdateOperationsInput | string
-    RestaurantId?: IntFieldUpdateOperationsInput | number
     Role?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    RestaurantId?: IntFieldUpdateOperationsInput | number
   }
 
   export type UserUncheckedUpdateInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
+    ImgPath?: StringFieldUpdateOperationsInput | string
     Email?: StringFieldUpdateOperationsInput | string
     Password?: StringFieldUpdateOperationsInput | string
     BirthDate?: DateTimeFieldUpdateOperationsInput | Date | string
     Gender?: StringFieldUpdateOperationsInput | string
-    RestaurantId?: IntFieldUpdateOperationsInput | number
     Role?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    RestaurantId?: IntFieldUpdateOperationsInput | number
   }
 
   export type UserCreateManyInput = {
     Id?: number
     Name: string
+    ImgPath: string
     Email: string
     Password: string
     BirthDate: Date | string
     Gender: string
-    RestaurantId: number
     Role: string
-    CreatedTime?: Date | string
-    UpdateTime?: Date | string
+    Active?: boolean
+    CreatedAt?: Date | string
+    UpdatedAt?: Date | string
+    DeletedAt?: Date | string | null
+    RestaurantId: number
   }
 
   export type UserUpdateManyMutationInput = {
     Name?: StringFieldUpdateOperationsInput | string
+    ImgPath?: StringFieldUpdateOperationsInput | string
     Email?: StringFieldUpdateOperationsInput | string
     Password?: StringFieldUpdateOperationsInput | string
     BirthDate?: DateTimeFieldUpdateOperationsInput | Date | string
     Gender?: StringFieldUpdateOperationsInput | string
-    RestaurantId?: IntFieldUpdateOperationsInput | number
     Role?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    RestaurantId?: IntFieldUpdateOperationsInput | number
   }
 
   export type UserUncheckedUpdateManyInput = {
     Id?: IntFieldUpdateOperationsInput | number
     Name?: StringFieldUpdateOperationsInput | string
+    ImgPath?: StringFieldUpdateOperationsInput | string
     Email?: StringFieldUpdateOperationsInput | string
     Password?: StringFieldUpdateOperationsInput | string
     BirthDate?: DateTimeFieldUpdateOperationsInput | Date | string
     Gender?: StringFieldUpdateOperationsInput | string
-    RestaurantId?: IntFieldUpdateOperationsInput | number
     Role?: StringFieldUpdateOperationsInput | string
-    CreatedTime?: DateTimeFieldUpdateOperationsInput | Date | string
-    UpdateTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    Active?: BoolFieldUpdateOperationsInput | boolean
+    CreatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    UpdatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    DeletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    RestaurantId?: IntFieldUpdateOperationsInput | number
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2096,17 +2183,41 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type UserCountOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
+    ImgPath?: SortOrder
     Email?: SortOrder
     Password?: SortOrder
     BirthDate?: SortOrder
     Gender?: SortOrder
-    RestaurantId?: SortOrder
     Role?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
+    RestaurantId?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -2117,27 +2228,33 @@ export namespace Prisma {
   export type UserMaxOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
+    ImgPath?: SortOrder
     Email?: SortOrder
     Password?: SortOrder
     BirthDate?: SortOrder
     Gender?: SortOrder
-    RestaurantId?: SortOrder
     Role?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
+    RestaurantId?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
     Id?: SortOrder
     Name?: SortOrder
+    ImgPath?: SortOrder
     Email?: SortOrder
     Password?: SortOrder
     BirthDate?: SortOrder
     Gender?: SortOrder
-    RestaurantId?: SortOrder
     Role?: SortOrder
-    CreatedTime?: SortOrder
-    UpdateTime?: SortOrder
+    Active?: SortOrder
+    CreatedAt?: SortOrder
+    UpdatedAt?: SortOrder
+    DeletedAt?: SortOrder
+    RestaurantId?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -2192,12 +2309,42 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -2242,6 +2389,22 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2300,6 +2463,39 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
 
