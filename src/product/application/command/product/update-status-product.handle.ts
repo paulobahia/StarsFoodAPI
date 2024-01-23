@@ -1,20 +1,20 @@
 import { CommandHandler, ICommandHandler } from "@nestjs/cqrs"
 import { Inject, NotFoundException } from "@nestjs/common"
 import { InjectionToken } from "../../injection-token"
-import { CategoryRepository } from "src/product/domain/category/category.repository"
-import { UpdateStatusCategoryCommand } from "./update-status-category.command"
+import { UpdateStatusproductCommand } from "./update-status-product.command"
 import { InjectionToken as InjectionRestaurantToken } from "src/restaurant/application/injection-token";
 import { RestaurantRepository } from "src/restaurant/domain/restaurant.repository";
+import { ProductRepository } from "src/product/domain/product/product.repository"
 
-@CommandHandler(UpdateStatusCategoryCommand)
-export class UpdateStatusCategoryHandler implements ICommandHandler<UpdateStatusCategoryCommand, void> {
+@CommandHandler(UpdateStatusproductCommand)
+export class UpdateStatusProductHandler implements ICommandHandler<UpdateStatusproductCommand, void> {
 
-    @Inject(InjectionToken.CATEGORY_REPOSITORY)
-    private readonly categoryRepository: CategoryRepository
+    @Inject(InjectionToken.PRODUCT_REPOSITORY)
+    private readonly productRepository: ProductRepository
     @Inject(InjectionRestaurantToken.RESTAURANT_REPOSITORY)
     private readonly restauranRepository: RestaurantRepository
 
-    async execute(command: UpdateStatusCategoryCommand): Promise<void> {
+    async execute(command: UpdateStatusproductCommand): Promise<void> {
         const { id, status, restaurantId } = command
         const restaurant = await this.restauranRepository.findById(command.restaurantId)
 
@@ -22,12 +22,12 @@ export class UpdateStatusCategoryHandler implements ICommandHandler<UpdateStatus
             throw new NotFoundException()
         }
 
-        const category = await this.categoryRepository.findById(id, restaurantId)
+        const product = await this.productRepository.findById(id, restaurantId)
 
-        if (!category) {
+        if (!product) {
             throw new NotFoundException()
         }
 
-        await this.categoryRepository.updateStatus(id, status, restaurantId)
+        await this.productRepository.updateStatus(id, status, restaurantId)
     }
 }

@@ -1,20 +1,20 @@
 import { CommandHandler, ICommandHandler } from "@nestjs/cqrs"
 import { Inject, NotFoundException } from "@nestjs/common"
 import { InjectionToken } from "../../injection-token"
-import { CategoryRepository } from "src/product/domain/category/category.repository"
-import { DeleteCategoryCommand } from "./delete-category.command"
 import { InjectionToken as InjectionRestaurantToken } from "src/restaurant/application/injection-token";
 import { RestaurantRepository } from "src/restaurant/domain/restaurant.repository";
+import { DeleteProductCommand } from "./delete-product.command";
+import { ProductRepository } from "src/product/domain/product/product.repository";
 
-@CommandHandler(DeleteCategoryCommand)
-export class DeleteCategoryHandler implements ICommandHandler<DeleteCategoryCommand, void> {
+@CommandHandler(DeleteProductCommand)
+export class DeleteProductHandler implements ICommandHandler<DeleteProductCommand, void> {
 
-    @Inject(InjectionToken.CATEGORY_REPOSITORY)
-    private readonly categoryRepository: CategoryRepository
+    @Inject(InjectionToken.PRODUCT_REPOSITORY)
+    private readonly productRepository: ProductRepository
     @Inject(InjectionRestaurantToken.RESTAURANT_REPOSITORY)
     private readonly restauranRepository: RestaurantRepository
 
-    async execute(command: DeleteCategoryCommand): Promise<void> {
+    async execute(command: DeleteProductCommand): Promise<void> {
         const { id, restaurantId } = command
         const restaurant = await this.restauranRepository.findById(command.restaurantId)
 
@@ -22,10 +22,12 @@ export class DeleteCategoryHandler implements ICommandHandler<DeleteCategoryComm
             throw new NotFoundException()
         }
 
-        const category = await this.categoryRepository.findById(id, restaurantId)
+        const product = await this.productRepository.findById(id, restaurantId)
 
-        if (!category) throw new NotFoundException()
+        if (!product) {
+            throw new NotFoundException()
+        }
 
-        await this.categoryRepository.delete(id, restaurantId)
+        await this.productRepository.delete(id, restaurantId)
     }
 }

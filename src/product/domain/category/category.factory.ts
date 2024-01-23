@@ -1,4 +1,4 @@
-import { Category, CategoryImplement, CategoryProperties } from "src/product/domain/category";
+import { Category, CategoryImplement, CategoryProperties } from "src/product/domain/category/category";
 
 type CreateCategoryOptions = Readonly<{
     name: string;
@@ -10,8 +10,9 @@ export class CategoryFactory {
     create(options: CreateCategoryOptions): Category {
         return new CategoryImplement({
             ...options,
-            createdTime: new Date(),
-            updatedTime: new Date(),
+            createdAt: new Date(),
+            updatedAt: new Date(),
+            deletedAt: null,
             status: false,
             active: true
         })

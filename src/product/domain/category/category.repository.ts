@@ -1,4 +1,4 @@
-import { Category } from 'src/product/domain/category'
+import { Category } from './category'
 
 export interface CategoryRepository {
     findById(id: number, restaurantId: number): Promise<Category | null>

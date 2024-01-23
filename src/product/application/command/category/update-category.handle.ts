@@ -2,21 +2,21 @@ import { CommandHandler, ICommandHandler } from "@nestjs/cqrs"
 import { UpdateCategoryCommand } from "./update-category.command"
 import { Inject, NotFoundException } from "@nestjs/common"
 import { InjectionToken } from "../../injection-token"
-import { CategoryRepository } from "src/product/domain/category.repository"
+import { CategoryRepository } from "src/product/domain/category/category.repository"
 import { InjectionToken as InjectionRestaurantToken } from "src/restaurant/application/injection-token";
-import { RestaurantQuery } from "src/restaurant/application/query/restaurant.query";
+import { RestaurantRepository } from "src/restaurant/domain/restaurant.repository";
 
 @CommandHandler(UpdateCategoryCommand)
 export class UpdateCategoryHandler implements ICommandHandler<UpdateCategoryCommand, void> {
 
     @Inject(InjectionToken.CATEGORY_REPOSITORY)
     private readonly categoryRepository: CategoryRepository
-    @Inject(InjectionRestaurantToken.RESTAURANT_QUERY)
-    private readonly restaurantQuery: RestaurantQuery
+    @Inject(InjectionRestaurantToken.RESTAURANT_REPOSITORY)
+    private readonly restauranRepository: RestaurantRepository
 
     async execute(command: UpdateCategoryCommand): Promise<void> {
         const { id, name, restaurantId } = command
-        const restaurant = await this.restaurantQuery.findById(restaurantId)
+        const restaurant = await this.restauranRepository.findById(command.restaurantId)
 
         if (!restaurant) {
             throw new NotFoundException()

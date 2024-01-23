@@ -9,8 +9,9 @@ export class CategoryMapper {
             restaurantId: raw.RestaurantId,
             status: raw.Status,
             active: raw.Active,
-            createdTime: raw.CreatedTime,
-            updateTime: raw.UpdateTime
+            createdAt: raw.CreatedAt,
+            updatedAt: raw.UpdatedAt,
+            deletedAt: raw.DeletedAt
         }
     }
 

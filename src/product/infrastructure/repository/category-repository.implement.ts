@@ -1,10 +1,10 @@
-import { Category } from "src/product/domain/category";
-import { CategoryRepository } from "src/product/domain/category.repository";
+import { Category } from "src/product/domain/category/category";
+import { CategoryRepository } from "src/product/domain/category/category.repository";
 import { CategoryEntity } from "../entity/category.entity";
-import { Prisma, Categories } from "prisma/generated/StarFood";
-import { StarFoodPrismaService } from "../database/star-food.prisma.service";
+import { StarFoodPrismaService } from "../../../shared/database/star-food.prisma.service";
 import { Inject, Injectable } from "@nestjs/common";
-import { CategoryFactory } from "src/product/domain/category.factory";
+import { CategoryFactory } from "src/product/domain/category/category.factory";
+import { Categories, Prisma } from "prisma/generated/StarFood";
 
 @Injectable()
 export class CategoryRepositoryImplement implements CategoryRepository {
@@ -37,7 +37,7 @@ export class CategoryRepositoryImplement implements CategoryRepository {
             },
             data: {
                 Name: category.Name,
-                UpdateTime: new Date()
+                UpdatedAt: new Date()
             }
         })
     }
@@ -60,8 +60,12 @@ export class CategoryRepositoryImplement implements CategoryRepository {
 
         await this.prisma.categories.create({
             data: {
+                Restaurant: {
+                    connect: {
+                        Id: category.RestaurantId
+                    }
+                },
                 Name: category.Name,
-                RestaurantId: category.RestaurantId
             }
         })
     }
@@ -73,7 +77,8 @@ export class CategoryRepositoryImplement implements CategoryRepository {
                 RestaurantId: restaurantId
             },
             data: {
-                Active: false
+                Active: false,
+                DeletedAt: new Date()
             }
         })
     }
@@ -93,8 +98,9 @@ export class CategoryRepositoryImplement implements CategoryRepository {
             restaurantId: entity.RestaurantId,
             status: entity.Status,
             active: entity.Active,
-            createdTime: entity.CreatedTime,
-            updatedTime: entity.UpdateTime
+            createdAt: entity.CreatedAt,
+            updatedAt: entity.UpdatedAt,
+            deletedAt: entity.DeletedAt
         });
     }
 }

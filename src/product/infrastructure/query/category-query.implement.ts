@@ -3,7 +3,7 @@ import { Injectable } from "@nestjs/common";
 import { CategoryMapper } from "../mappers/category.mapper";
 import { CategoryQuery } from "src/product/application/query/category/category.query";
 import { FindCategoriesResult } from "src/product/application/query/category/find-categories.result";
-import { StarFoodPrismaService } from "../database/star-food.prisma.service";
+import { StarFoodPrismaService } from "../../../shared/database/star-food.prisma.service";
 import { FindCategoryByIdResult } from "src/product/application/query/category/find-category-by-id.result";
 
 @Injectable()

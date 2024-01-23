@@ -11,8 +11,9 @@ export type CategoryOptionalProperties = Readonly<
     Partial<{
         status: boolean;
         active: boolean;
-        createdTime: Date;
-        updatedTime: Date;
+        createdAt: Date;
+        updatedAt: Date;
+        deletedAt: Date | null;
     }>
 >;
 
@@ -25,8 +26,9 @@ export interface Category {
 export class CategoryImplement extends AggregateRoot implements Category {
     private name: string
     private readonly restaurantId: number
-    private createdTime: Date;
-    private updatedTime: Date;
+    private createdAt: Date;
+    private updatedAt: Date;
+    private deletedAt: Date | null;
     private status: boolean;
     private active: boolean;
 
@@ -37,6 +39,6 @@ export class CategoryImplement extends AggregateRoot implements Category {
 
     updateName(name: string): void {
         this.name = name;
-        this.updatedTime = new Date();
+        this.updatedAt = new Date();
     }
 }

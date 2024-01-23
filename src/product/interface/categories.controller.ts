@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Put, UseGuards } from "@nestjs/common";
 import { ApiBadRequestResponse, ApiInternalServerErrorResponse, ApiNotFoundResponse, ApiResponse, ApiTags, ApiUnauthorizedResponse } from "@nestjs/swagger";
 import { JwtAuthGuard } from "src/shared/authentication/jwt.guard";
-import { ResponseDescription } from "./response-description";
+import { ResponseDescription } from "../../utils/response-description";
 import { FindCategoriesResponseDto } from "./dto/category/find-categories-response.dto";
 import { RestaurantId } from "src/utils/decorators";
 import { FindCategoriesQuery } from "../application/query/category/find-categories.query";
@@ -37,7 +37,7 @@ export class CategoriesController {
     }
 
     @Post()
-    @ApiResponse({ status: HttpStatus.CREATED, description: ResponseDescription.OK })
+    @ApiResponse({ status: HttpStatus.CREATED, description: ResponseDescription.CREATED })
     @ApiBadRequestResponse({ description: ResponseDescription.BAD_REQUEST })
     @ApiNotFoundResponse({ description: ResponseDescription.NOT_FOUND })
     @ApiInternalServerErrorResponse({ description: ResponseDescription.INTERNAL_SERVER_ERROR })
